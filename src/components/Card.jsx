@@ -1,12 +1,15 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({ id, text, date }) => {
   return (
     <div className='card'>
-      <span>Notepad app. This is note pad....</span>
+      <span>{ text }</span>
       <div className="footer">
-        <small><i className="fa-solid fa-calendar-day"></i> 13/05/2022</small>
+        <small><i className="fa-solid fa-calendar-day"></i>{ date }</small>
+        <div className='footer-icon'>
+        <i class="fa-sharp fa-solid fa-copy"></i>
         <i className="fa-solid fa-trash"></i>
+        </div>
       </div>
     </div>
   )

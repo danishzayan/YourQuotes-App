@@ -7,8 +7,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background-color: rgb(38, 36, 36);
+}
+
 .container {
-  max-width: 960px;
+  /* max-width: 960px; */
   width: 100%;
   margin: 0 auto;
   padding: 15px;
@@ -28,6 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid #fff021f0;
 }
 
 .card span {
@@ -39,6 +44,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffe25e;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 1px solid #ffd100d1;
 }
 
 .footer .fa-calendar-day:before {
@@ -51,4 +60,12 @@
   font-size: 15px;
   color: #fb0000;
   cursor: pointer;
+}
+
+.footer .fa-copy:before {
+  content: "\f0c5";
+  font-size: 15px;
+  color: #515a39;
+  cursor: pointer;
+  margin-right: 10px;
 }
