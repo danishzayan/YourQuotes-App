@@ -1,16 +1,21 @@
 import React from 'react';
 import Card from './Card';
+import AddNote from './addNote';
 
-const CardsList = ({ notes }) => {
+const CardsList = ({ notes, handleAddNote, handleDeleteNote }) => {
   return (
     <div className="cards-list">
-      {notes.map((note) => (
+      {
+        notes.map((note) => (
         <Card 
-             id={note.id} 
-             text={note.text} 
-             date={note.date}
-             />
-      ))}
+          id={note.id} 
+          text={note.text} 
+          date={note.date} 
+          handleDeleteNote={handleDeleteNote}
+        />
+      ))
+      }
+      <AddNote handleAddNote={ handleAddNote } />
     </div>
   );
 };

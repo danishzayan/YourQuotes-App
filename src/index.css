@@ -1,3 +1,7 @@
+/* Project Name: Notepad
+Date: 07-08-2022
+Developer: Danish Kamal */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,200;1,300&display=swap');
 
 * {
@@ -32,11 +36,39 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #fff021f0;
+  /* border: 1px solid #fff021f0; */
+  white-space: pre-wrap;
 }
 
 .card span {
   font-size: 15px;
+}
+
+.card.new {
+  background: #67e4d8;
+  border: none;
+}
+
+textarea {
+  background: #67e4d8;
+  border: none;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.footer .save {
+  border: none;
+  padding: 0 8px;
+  border-radius: 10px;
+  background-color: #e1e1e1;
+}
+
+.footer .save:hover {
+  cursor: pointer;
+  background-color: #ded4d4e8;
 }
 
 .footer {
@@ -44,27 +76,32 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffe25e;
+  /* background-color: #ffe25e;
   padding: 2px 5px;
   border-radius: 5px;
-  border: 1px solid #ffd100d1;
+  border: 1px solid #ffd100d1; */
+}
+
+.footer small {
+  font-size: 13px;
+  font-weight: 200;
 }
 
 .footer .fa-calendar-day:before {
-  font-size: 15px;
+  font-size: 14px;
   color: black;
   margin-right: 5px;
 }
 
 .footer .fa-trash:before {
-  font-size: 15px;
+  font-size: 14px;
   color: #fb0000;
   cursor: pointer;
 }
 
 .footer .fa-copy:before {
   content: "\f0c5";
-  font-size: 15px;
+  font-size: 14px;
   color: #515a39;
   cursor: pointer;
   margin-right: 10px;
