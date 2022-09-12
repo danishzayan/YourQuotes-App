@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Card = ({ id, text, date, handleDeleteNote }) => {
+const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
   return (
-    <div className='card'>
+    <div className='card'  style={{ background: `linear-gradient(90deg, #${color1} -100%, #${color2} 50%)` }}>
       <span>{ text }</span>
       <div className="footer">
         <small><i className="fa-solid fa-calendar-day"></i>{ date }</small>

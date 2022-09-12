@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const AddNote = ({ handleAddNote }) => {
 
   const [noteText, setNoteText] = useState('');
-  const [cardColor, setCardColor] = useState('');
 
   const characterLimit = 200;
  
@@ -18,13 +17,10 @@ const AddNote = ({ handleAddNote }) => {
       handleAddNote(noteText);
       setNoteText('');
     }
-
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    setCardColor(randomColor);
   }
 
   return (
-    <div className="card new" style={{ backgroundColor: `#${cardColor}` }} >
+    <div className="card new" >
       <textarea
         cols="10"
         rows="6"
