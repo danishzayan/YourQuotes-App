@@ -3,6 +3,10 @@ import './App.css'
 import CardsList from './components/CardsList'
 import { nanoid } from 'nanoid';
 
+//API Details
+// 20220912223415
+// https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app
+
 function App() {
 
   const randomColor1 = Math.floor(Math.random()*16777215).toString(16);
@@ -15,20 +19,6 @@ function App() {
       color2: randomColor2,
       text: "this is the note pad app text",
       date: "15/06/2021",
-    },
-    {
-      id: nanoid(),
-      color1: randomColor1,
-      color2: randomColor2,
-      text: "this is the note pad app fourth text",
-      date: "11/07/2019",
-    },
-    {
-      id: nanoid(),
-      color1: randomColor1,
-      color2: randomColor2,
-      text: "this is the note pad app third text",
-      date: "25/01/2021",
     },
   ])
 
