@@ -59,7 +59,8 @@ function App() {
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
-    setNotes(newNotes);
+    //delete operation
+    axios.delete(`https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,setNotes(newNotes))
   };
 
   return (
