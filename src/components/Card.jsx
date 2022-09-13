@@ -9,7 +9,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
       (success) =>
         toast('📋 Successfully Copied Text!', {
           position: 'top-center',
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
