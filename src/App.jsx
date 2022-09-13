@@ -3,6 +3,7 @@ import './App.css';
 import CardsList from './components/CardsList';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
+import { ToastContainer } from 'react-toastify';
 
 //API Details
 // 20220912223415
@@ -22,8 +23,7 @@ function App() {
     },
   ]);
 
-  
-  // read operaton 
+  // read operaton
   const getData = () => {
     axios
       .get('https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app')
@@ -60,7 +60,10 @@ function App() {
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     //delete operation
-    axios.delete(`https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,setNotes(newNotes))
+    axios.delete(
+      `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,
+      setNotes(newNotes)
+    );
   };
 
   return (
@@ -70,6 +73,18 @@ function App() {
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <ToastContainer />
     </div>
   );
 }
