@@ -4,6 +4,8 @@ import CardsList from './components/CardsList';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
+import Search from './components/Search';
+import Header from './components/Header';
 
 //API Details
 // 20220912223415
@@ -22,6 +24,10 @@ function App() {
       date: '15/06/2021',
     },
   ]);
+
+  const [searchText, setSearchText] = useState('');
+
+  const [darkMode, setDarkMode] = useState(false);
 
   // read operaton
   const getData = () => {
@@ -67,9 +73,13 @@ function App() {
   };
 
   return (
+    <>
+     <div className={`${darkMode && 'dark-mode'}`}>
+     <Header handleToggleDarkMode={setDarkMode} />
     <div className="container">
+      <Search handleSearchNote={setSearchText} />
       <CardsList
-        notes={notes}
+        notes={notes.filter((note)=> note.text.toLowerCase().includes(searchText))}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
@@ -86,6 +96,8 @@ function App() {
       />
       <ToastContainer />
     </div>
+     </div>
+    </>
   );
 }
 
