@@ -68,6 +68,7 @@ textarea:focus {
   padding: 0 8px;
   border-radius: 10px;
   background-color: #e1e1e1;
+  outline: none;
 }
 
 .footer .save:hover {

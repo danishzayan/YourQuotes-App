@@ -19,6 +19,24 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
       (err) => alert('Error copying text')
     );
   };
+  
+  const handleShareText = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: `${text}`,
+          url: 'https://your-quotess.netlify.app/',
+        })
+        .then(() => {
+          console.log('Thanks for sharing!');
+        })
+        .catch((err) => {
+          console.log('Error while using Web share API:'+ err);
+        });
+    } else {
+      alert("Browser doesn't support this API !");
+    }
+  };
 
   return (
     <>
@@ -35,7 +53,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
             {date}
           </small>
           <div className="footer-icon">
-            <i class="fa-solid fa-share"></i>
+            <i class="fa-solid fa-share" onClick={handleShareText}></i>
             <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
             <i
               className="fa-solid fa-trash"
