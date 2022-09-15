@@ -44,6 +44,8 @@ body {
 
 .card span {
   font-size: 14px;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 .card.new {
