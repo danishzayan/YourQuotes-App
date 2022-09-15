@@ -35,6 +35,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
             {date}
           </small>
           <div className="footer-icon">
+            <i class="fa-solid fa-share"></i>
             <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
             <i
               className="fa-solid fa-trash"
