@@ -117,8 +117,15 @@ textarea:focus {
   margin-right: 10px;
 }
 
-.fa-share:before {
+.footer .fa-share:before {
   content: "\f064";
+  margin-right: 10px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.footer .fa-download:before {
   margin-right: 10px;
   color: #000000;
   cursor: pointer;

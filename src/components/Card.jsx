@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as htmlToImage from 'html-to-image';
+
 
 const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
-
+  // code for clipboard and toastify
   const handleCopyText = () => {
     navigator.clipboard.writeText(text).then(
       (success) =>
@@ -19,7 +21,8 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
       (err) => alert('Error copying text')
     );
   };
-  
+
+  // code for share button
   const handleShareText = () => {
     if (navigator.share) {
       navigator
@@ -31,17 +34,31 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
           console.log('Thanks for sharing!');
         })
         .catch((err) => {
-          console.log('Error while using Web share API:'+ err);
+          console.log('Error while using Web share API:' + err);
         });
     } else {
       alert("Browser doesn't support this API !");
     }
   };
 
+
+  // code for download image 
+  const domEl = useRef(null);
+  const downloadImage = async () => {
+    const dataUrl = await htmlToImage.toPng(domEl.current);
+
+    // download image
+    const link = document.createElement('a');
+    link.download = 'html-to-img.png';
+    link.href = dataUrl;
+    link.click();
+  };
+
   return (
     <>
       <div
         className="card"
+        ref={domEl}
         style={{
           background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
         }}
@@ -53,6 +70,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
             {date}
           </small>
           <div className="footer-icon">
+            <i class="fa-solid fa-download" onClick={downloadImage}></i>
             <i class="fa-solid fa-share" onClick={handleShareText}></i>
             <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
             <i
