@@ -12,6 +12,7 @@ import Header from './components/Header';
 // https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app
 
 function App() {
+
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
 
@@ -79,7 +80,7 @@ function App() {
     <div className="container">
       <Search handleSearchNote={setSearchText} />
       <CardsList
-        notes={notes.filter((note)=> note.text.toLowerCase().includes(searchText))}
+        notes={notes.filter((note)=> note.text.includes(searchText))}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
