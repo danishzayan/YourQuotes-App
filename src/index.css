@@ -34,7 +34,7 @@ body {
   background-color: #8afed6;
   border-radius: 10px;
   padding: 1rem;
-  min-height: 180px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -157,6 +157,10 @@ textarea:focus {
   top: 0;
   width: 100%;
   overflow: hidden;
+}
+
+.header h1 {
+  font-size: 25px;
 }
 
 /* The switch - the box around the slider */
