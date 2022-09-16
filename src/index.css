@@ -34,7 +34,7 @@ body {
   background-color: #8afed6;
   border-radius: 10px;
   padding: 1rem;
-  min-height: 200px;
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -57,10 +57,23 @@ textarea {
   background: #67e4d8;
   border: none;
   resize: none;
+
+  border: 1px solid #35c8bab8;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 textarea:focus {
   outline: none;
+}
+
+.card.new input {
+  outline: none;
+  background: #67e4d8;
+  border: none;
+  border: 1px solid #35c8bab8;
+  border-radius: 6px;
+  padding: 4px;
 }
 
 .footer .save {

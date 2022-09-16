@@ -42,14 +42,14 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
   };
 
 
-  // code for download image 
+  // code for convert html to image 
   const domEl = useRef(null);
   const downloadImage = async () => {
     const dataUrl = await htmlToImage.toPng(domEl.current);
 
     // download image
     const link = document.createElement('a');
-    link.download = 'html-to-img.png';
+    link.download = 'your-quotes.png';
     link.href = dataUrl;
     link.click();
   };
