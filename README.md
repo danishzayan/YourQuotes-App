@@ -1,1 +1,1 @@
-# notepad-app
+# YourQuotes-app
