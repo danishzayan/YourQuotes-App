@@ -10,7 +10,7 @@
   </tr>
 </table>
 <h2>Project Contributors⭐</h2> 
-Thanks a lot for spending your time helping all-round-calculator grow. Thanks a lot! Keep rocking 🍻<br />
+Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🍻<br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors" align="center"> <br />
   <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" /> 
