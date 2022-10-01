@@ -4,6 +4,17 @@
 ## 📷 YourQuotes-App ScreenShot
 ![YourQuotes-App](https://user-images.githubusercontent.com/46997504/193424758-5301082f-ae4e-4d34-987e-d0d43c6f6169.PNG)
 
+## Contributing 👨‍💻 
+
+- Contributions make the open source community such an amazing place to learn, inspire, and create.
+- Any contributions you make are **greatly appreciated**.
+- Check out our [contribution guidelines](/CONTRIBUTING.md) for more information.
+
+
+## License 🛡️ 
+
+YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## 😎 Project Admin
 
 <table>
