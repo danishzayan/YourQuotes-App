@@ -1,6 +1,8 @@
 # YourQuotes-app
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5dc02221-5e8b-406d-a59b-72c0a563baa6/deploy-status)](https://app.netlify.com/sites/your-quotess/deploys)
 
+## 📷 YourQuotes-App ScreenShot
+![YourQuotes-App](https://user-images.githubusercontent.com/46997504/193424758-5301082f-ae4e-4d34-987e-d0d43c6f6169.PNG)
 
 ## 😎 Project Admin
 
