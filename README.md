@@ -9,7 +9,7 @@
 <td align="center"><a href="https://github.com/danishzayan"><img src="https://avatars.githubusercontent.com/u/46997504?v=4" width="100px;" alt=""/><br /><sub><b>Danish Kamal</b></sub></a></td>
   </tr>
 </table>
-<h2>Project Contributors⭐</h2> 
+<h2>Project Contributors⭐</h2> <br />
 Thanks a lot for spending your time helping all-round-calculator grow. Thanks a lot! Keep rocking 🍻
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors" align="center">
