@@ -14,8 +14,6 @@ npm install
 npm run dev
 ```
 
-![ViteJs](https://vitejs.dev/guide/)
-
 ## It has the following features:
 - Gradient Theme.
 - Beautiful Cards for Quotes.
