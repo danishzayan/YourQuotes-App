@@ -4,6 +4,18 @@
 ## YourQuotes-App
 YourQuotes is a user friendly and eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image. it is made with **Vite+React**. 
 
+## Run YourQuotes-App
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+![ViteJs](https://vitejs.dev/guide/)
+
 ## It has the following features:
 - Gradient Theme.
 - Beautiful Cards for Quotes.
