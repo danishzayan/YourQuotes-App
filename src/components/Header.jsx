@@ -3,8 +3,10 @@ import Search from "./Search";
 const Header = ({ handleToggleDarkMode, setSearch }) => {
   return (
     <div className="header">
-      <h1>YourQuotes</h1>
-      <Search handleSearchNote={setSearch} />
+      <div className="header-left">
+        <h1>YourQuotes</h1>
+        <Search handleSearchNote={setSearch} />
+      </div>
       <label className="switch">
         <input
           type="checkbox"

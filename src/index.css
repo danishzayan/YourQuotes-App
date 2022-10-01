@@ -2,13 +2,13 @@
 Date: 07-08-2022
 Developer: Danish Kamal */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -48,7 +48,6 @@ body {
   overflow: hidden;
   word-break: break-word;
 }
-
 
 .card .text {
   margin: 0 auto;
@@ -168,18 +167,34 @@ textarea:focus {
 .search {
   display: flex;
   align-items: center;
-  background: rgb(233 233 233);
-  box-shadow: rgb(0 0 0 / 24%) 0px 1px 4px;
+  color: white;
+  border: solid 2px #ffffff66;
   border-radius: 9px;
   padding: 5px 10px;
-  margin-bottom: 1em;
+  gap: 0.4rem;
+  width: 60%;
+  transition: colors 0.3s ease, width 0.6s ease;
+}
+
+.search:focus-within {
+  border: solid 2px #ffffff;
+  caret-color: #ffffff;
+  width: 100%;
 }
 
 .search input {
   border: none;
-  background-color: rgb(233 233 233);
-  margin-left: 8px;
+  background-color: transparent;
   width: 100%;
+}
+
+.search input::placeholder {
+  color: #ffffffe4;
+  transition: all 0.3s ease;
+}
+
+.search input:focus::placeholder {
+  color: #ffffff;
 }
 
 .search input:focus {
@@ -214,7 +229,6 @@ textarea:focus {
   height: 25px;
 }
 
-
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
@@ -231,8 +245,8 @@ textarea:focus {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -243,16 +257,16 @@ textarea:focus {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -277,4 +291,12 @@ input:checked + .slider:before {
 
 .dark-mode h1 {
   color: #fff;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 40%;
 }
