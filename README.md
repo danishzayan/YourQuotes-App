@@ -12,7 +12,7 @@
 <h2>Project Contributors⭐</h2> 
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors" align="center">
-  <img src="https://contrib.rocks/image?repo=Susmita-Dey/TextUtils" /> 
+  <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" /> 
 </a>
 <hr>
 <p align="center">
