@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as htmlToImage from 'html-to-image';
 
-
 const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
   // code for clipboard and toastify
   const handleCopyText = () => {
@@ -41,13 +40,10 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
     }
   };
 
-
-  // code for convert html to image 
+  // code for convert html to image
   const domEl = useRef(null);
   const downloadImage = async () => {
     const dataUrl = await htmlToImage.toPng(domEl.current);
-
-    // download image
     const link = document.createElement('a');
     link.download = 'your-quotes.png';
     link.href = dataUrl;
@@ -63,20 +59,27 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
           background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
         }}
       >
-        <span>{text}</span>
-        <div className="footer">
-          <small>
-            <i className="fa-solid fa-calendar-day"></i>
-            {date}
-          </small>
-          <div className="footer-icon">
-            <i class="fa-solid fa-download" onClick={downloadImage}></i>
-            <i class="fa-solid fa-share" onClick={handleShareText}></i>
-            <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
-            <i
-              className="fa-solid fa-trash"
-              onClick={() => handleDeleteNote(id)}
-            ></i>
+        <div className="text">
+          <i class="fas fa-quote-left"></i>
+          <span>{text}</span>
+          <i class="fas fa-quote-right"></i>
+        </div>
+        <div className="footer-writer">
+          <span>~ By Danish</span>
+          <div className="footer">
+            <small>
+              <i className="fa-solid fa-calendar-day"></i>
+              {date}
+            </small>
+            <div className="footer-icon">
+              <i class="fa-solid fa-download" onClick={downloadImage}></i>
+              <i class="fa-solid fa-share" onClick={handleShareText}></i>
+              <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
+              {/* <i
+                className="fa-solid fa-trash"
+                onClick={() => handleDeleteNote(id)}
+              ></i> */}
+            </div>
           </div>
         </div>
       </div>

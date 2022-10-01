@@ -2,7 +2,7 @@
 Date: 07-08-2022
 Developer: Danish Kamal */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap');
 
 * {
   margin: 0;
@@ -44,8 +44,18 @@ body {
 
 .card span {
   font-size: 14px;
+  font-weight: 500;
   overflow: hidden;
   word-break: break-word;
+}
+
+
+.card .text {
+  margin: 0 auto;
+}
+.text span {
+  margin: 0 5px;
+  text-transform: capitalize;
 }
 
 .card.new {
@@ -89,6 +99,15 @@ textarea:focus {
   background-color: #ded4d4e8;
 }
 
+.footer-writer span {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+  display: flex;
+  justify-content: end;
+  text-transform: capitalize;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
@@ -98,6 +117,7 @@ textarea:focus {
   padding: 0 5px;
   border-radius: 5px;
   border: 1px solid #ffffff1f;
+  margin-top: 1em;
 }
 
 .card.new .footer {
@@ -107,7 +127,7 @@ textarea:focus {
 
 .footer small {
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .footer .fa-calendar-day:before {
@@ -127,7 +147,7 @@ textarea:focus {
   font-size: 14px;
   color: #000000;
   cursor: pointer;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .footer .fa-share:before {
@@ -152,7 +172,7 @@ textarea:focus {
   box-shadow: rgb(0 0 0 / 24%) 0px 1px 4px;
   border-radius: 9px;
   padding: 5px 10px;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .search input {
@@ -173,7 +193,7 @@ textarea:focus {
   justify-content: space-between;
   align-items: center;
   background-image: linear-gradient(139deg, #ff4b01, #ee7703, #ff4b01, #ee7703);
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   padding: 9px 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: sticky;
