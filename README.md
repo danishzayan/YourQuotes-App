@@ -20,6 +20,7 @@ npm run dev
 - Card has footer in which footer have date, download icon, share icon, clipboard icon and delete icon.
 
 ## Add Features or Issue in YourQuotes-App:
+- **Note:** When your adding new features or issues fixing so UI/Theme design should be responsive for Mobile and Tablet.
 - Fix Issue: pending...
 - Fix Issue: remover search bar and Design Beautiful header in yourQutes-App and add search bar in header. 
 - Fix issue: Remove "type to add your-quotes" card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup open for posting qutoes
