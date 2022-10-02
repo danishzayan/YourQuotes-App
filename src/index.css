@@ -198,6 +198,13 @@ textarea:focus {
   font-size: 15px;
 }
 
+.footer .fa-volume-up:before {
+  margin-right: 10px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 .search {
   display: flex;
   align-items: center;

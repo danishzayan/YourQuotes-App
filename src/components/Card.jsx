@@ -5,6 +5,10 @@ import * as htmlToImage from 'html-to-image';
 
 const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
   // code for clipboard and toastify
+
+  const msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+
   const handleCopyText = () => {
     navigator.clipboard.writeText(text).then(
       (success) =>
@@ -40,6 +44,9 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
     }
   };
 
+  const talk = () => {
+    window.speechSynthesis.speak(msg);
+  };
   // code for convert html to image
   const domEl = useRef(null);
   const downloadImage = async () => {
@@ -73,6 +80,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
             </small>
             <div className="footer-icon">
               <i class="fa-solid fa-download" onClick={downloadImage}></i>
+              <i class="fa-solid fa-volume-up" onClick={talk}></i>
               <i class="fa-solid fa-share" onClick={handleShareText}></i>
               <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
               <i
