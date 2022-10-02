@@ -75,10 +75,10 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
               <i class="fa-solid fa-download" onClick={downloadImage}></i>
               <i class="fa-solid fa-share" onClick={handleShareText}></i>
               <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
-              {/* <i
+              <i
                 className="fa-solid fa-trash"
                 onClick={() => handleDeleteNote(id)}
-              ></i> */}
+              ></i>
             </div>
           </div>
         </div>
