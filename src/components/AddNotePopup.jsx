@@ -21,18 +21,23 @@ const AddNotePopup = ({ handleAddNote, setAddNotePopupIsOpen }) => {
   };
 
   return (
-    <div className="card new popup">
-      <h1 className="popup-title">Add a YourQuote</h1>
+    <div className="card new popup" data-target="popup">
+      <h1 className="popup-title" data-target="popup">
+        Add a YourQuote
+      </h1>
       <textarea
         cols="10"
         rows="6"
         onChange={handleChange}
         value={noteText}
+        data-target="popup"
       ></textarea>
-      <input type="text" placeholder="Writer Name..." />
-      <div className="footer">
-        <small>{characterLimit - noteText.length} Remaining</small>
-        <button className="save" onClick={handleSave}>
+      <input type="text" placeholder="Writer Name..." data-target="popup" />
+      <div className="footer" data-target="popup">
+        <small data-target="popup">
+          {characterLimit - noteText.length} Remaining
+        </small>
+        <button className="save" onClick={handleSave} data-target="popup">
           Post
         </button>
       </div>

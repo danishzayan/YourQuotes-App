@@ -77,7 +77,7 @@ body {
 }
 
 .popup {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -86,9 +86,14 @@ body {
 }
 
 .popup-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: rgb(56, 56, 56);
+  text-align: center;
+}
+
+.add-overlay {
+  opacity: 0.5;
 }
 
 textarea {
@@ -98,6 +103,7 @@ textarea {
   border: 1px solid #35c8bab8;
   border-radius: 8px;
   padding: 5px;
+  margin-bottom: 0.3rem;
 }
 
 textarea:focus {
@@ -225,6 +231,7 @@ textarea:focus {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: sticky;
   top: 0;
+  z-index: 100;
   width: 100%;
   overflow: hidden;
 }
