@@ -1,3 +1,7 @@
 /* Project Name: Notepad
 Date: 07-08-2022
 Developer: Danish Kamal */
+
+#app {
+    background-image: linear-gradient(to right bottom, #365163, #635536);;
+}
