@@ -2,13 +2,13 @@
 Date: 07-08-2022
 Developer: Danish Kamal */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -21,6 +21,20 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   min-height: 100vh;
+}
+
+.add-note-btn {
+  background-color: tomato;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .cards-list {
@@ -49,7 +63,6 @@ body {
   word-break: break-word;
 }
 
-
 .card .text {
   margin: 0 auto;
 }
@@ -63,11 +76,25 @@ body {
   border: none;
 }
 
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  box-shadow: 0 0 5px 1px black;
+}
+
+.popup-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgb(56, 56, 56);
+}
+
 textarea {
   background: #67e4d8;
   border: none;
   resize: none;
-
   border: 1px solid #35c8bab8;
   border-radius: 8px;
   padding: 5px;
@@ -214,7 +241,6 @@ textarea:focus {
   height: 25px;
 }
 
-
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
@@ -231,8 +257,8 @@ textarea:focus {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -243,16 +269,16 @@ textarea:focus {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
