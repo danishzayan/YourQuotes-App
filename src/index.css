@@ -154,7 +154,7 @@ textarea:focus {
 
 .footer .fa-trash:before {
   font-size: 14px;
-  color: #fb0000;
+  color: black;
   cursor: pointer;
 }
 
