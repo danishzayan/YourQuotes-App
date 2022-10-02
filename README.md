@@ -25,6 +25,7 @@ npm run dev
 - Fix issue: Remove "type to add your-quotes" card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup open for posting qutoes
 - Add a sound button to Listen Quotes in a card
 - Fix issue: Share gradient card image with social meaida without card footer icon and even should share app link with image.
+- Fix Issue: Quotes should be search in both Capital and small letter
 
 
 ## 📷 YourQuotes-App ScreenShot
