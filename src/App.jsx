@@ -86,7 +86,6 @@ function App() {
             handleAddNote={addNote}
             handleDeleteNote={deleteNote}
           />
-          {/* <AddNotePopup /> */}
           <ToastContainer
             position="top-center"
             autoClose={2000}
