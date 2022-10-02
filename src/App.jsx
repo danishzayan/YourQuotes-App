@@ -80,7 +80,7 @@ function App() {
     <div className="container">
       <Search handleSearchNote={setSearchText} />
       <CardsList
-        notes={notes.filter((note)=> note.text.includes(searchText))}
+        notes={notes.filter((note)=> note.text.toUpperCase().includes(searchText.toLocaleUpperCase()))}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
