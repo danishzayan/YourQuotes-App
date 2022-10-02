@@ -6,6 +6,8 @@ import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
 import Search from './components/Search';
 import Header from './components/Header';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //API Details
 // 20220912223415
@@ -73,7 +75,17 @@ function App() {
       axios.delete(
         `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,
         setNotes(newNotes)
-      );
+      )
+    else
+      toast('📋 This is not YourQutoes', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
   };
 
   return (
