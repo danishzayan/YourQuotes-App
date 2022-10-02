@@ -21,8 +21,8 @@ npm run dev
 
 ## Add Features or Issue in YourQuotes-App:
 - **Note:** When your adding new features or issues fixing so UI/Theme design should be responsive for Mobile and Tablet.
-- Fix Issue: pending...
-- Fix Issue: remover search bar and Design Beautiful header in yourQutes-App and add search bar in header. 
+- Fix Issue: **Attention** Every body can post YourQutoes but should not be delete qutoes from everybody.. whenever other people try to delete your qutoes show tostify msg "This is not YourQutoes" or from Which system post Qutoes from only that system can delete qutoes not any other system and this funtionality should work on without login...
+- Fix Issue: Remove "type to add your-quotes" post card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup should be open for posting qutoes.. 
 - Fix issue: Remove "type to add your-quotes" card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup open for posting qutoes
 - Add a sound button to Listen Quotes in a card
 - Fix issue: Share gradient card image with social meaida without card footer icon and even should share app link with image.
