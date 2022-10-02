@@ -32,7 +32,7 @@ const AddNote = ({ handleAddNote }) => {
       <input type="text" placeholder='Writer Name...' />
       <div className="footer">
         <small>{ characterLimit - noteText.length } Remaining</small>
-        <button className="save" onClick={ handleSave }>Save</button>
+        <button className="save" onClick={ handleSave }>Post</button>
       </div>
     </div>
   );
