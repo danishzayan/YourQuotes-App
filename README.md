@@ -53,9 +53,10 @@ YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) fi
 <h2>Project Contributors⭐</h2> 
 Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🍻<br />
 
-<a href="https://github.com/NvChad/NvChad/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=NvChad/NvChad" />
+<a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" />
 </a>
+
 <hr>
 <p align="center">
   Show some :heart: by starring the repository.
