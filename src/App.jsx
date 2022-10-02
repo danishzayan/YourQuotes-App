@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 import AddNotePopup from "./components/AddNotePopup";
-import CardsList from './components/CardsList';
-import { nanoid } from 'nanoid';
-import axios from 'axios';
-import { ToastContainer } from 'react-toastify';
-import Search from './components/Search';
-import Header from './components/Header';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import CardsList from "./components/CardsList";
+import { nanoid } from "nanoid";
+import axios from "axios";
+import { ToastContainer } from "react-toastify";
+import Search from "./components/Search";
+import Header from "./components/Header";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //API Details
 // 20220912223415
 // https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app
 
-<<<<<<< HEAD
 const ID = nanoid();
-=======
-const ID = nanoid()
->>>>>>> ea40f238fcc38841692d8edbcce34255a024082e
 
 function App() {
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
