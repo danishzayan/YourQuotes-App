@@ -5,6 +5,7 @@ import AddNote from './addNote';
 const CardsList = ({ notes, handleAddNote, handleDeleteNote }) => {
   return (
     <div className="cards-list">
+      <AddNote handleAddNote={ handleAddNote }/>
       {
         notes.map((note) => (
         <Card 
@@ -17,7 +18,6 @@ const CardsList = ({ notes, handleAddNote, handleDeleteNote }) => {
         />
       ))
       }
-      <AddNote handleAddNote={ handleAddNote }/>
     </div>
   );
 };
