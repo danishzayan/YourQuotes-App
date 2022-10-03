@@ -22,15 +22,16 @@ npm run dev
 ## Add Features or Issue in YourQuotes-App:
 - **Note:** When your adding new features or issues fixing so UI/Theme design should be responsive for Mobile and Tablet.
 - Fix Issue: **Attention** Every body can post YourQutoes but should not be delete qutoes from everybody.. whenever other people try to delete your qutoes show tostify msg "This is not YourQutoes" or from Which system post Qutoes from only that system can delete qutoes not any other system and this funtionality should work on without login...
-- Fix Issue: Remove "type to add your-quotes" post card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup should be open for posting qutoes.. 
+- Fix Issue: Remove "type to add your-quotes" post card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup should be open for posting qutoes..  **( done ✅ )**
 - Fix issue: Remove "type to add your-quotes" card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup open for posting qutoes
-- Add a sound button to Listen Quotes in a card
+- Add a sound button to Listen Quotes in a card  **( done ✅ )**
 - Fix issue: Share gradient card image with social meaida without card footer icon and even should share app link with image.
-- Fix Issue: Quotes should be search in both Capital and small letter
+- Fix Issue: Quotes should be search in both Capital and small letter  **( done ✅ )**
 
 
 ## 📷 YourQuotes-App ScreenShot
-![YourQuotes-App](https://user-images.githubusercontent.com/46997504/193424758-5301082f-ae4e-4d34-987e-d0d43c6f6169.PNG)
+![YourQuotes-Appss](https://user-images.githubusercontent.com/46997504/193505249-6289857c-968e-4093-9b0b-60312a2e2faa.PNG)
+
 
 ## Contributing 👨‍💻 
 
@@ -51,7 +52,7 @@ YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) fi
   </tr>
 </table>
 <h2>Project Contributors⭐</h2> 
-Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🍻<br />
+Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🍻<br /> <br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" />
@@ -59,7 +60,7 @@ Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep 
 
 <hr>
 <p align="center">
-  Show some :heart: by starring the repository.
+  Made in :heart: INDIA and ⭐ Staring the repo.
 </p>
 
 
