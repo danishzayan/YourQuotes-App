@@ -81,9 +81,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  box-shadow: 0 0 5px 1px black;
-  z-index: 1
+  width: 300px;
+  box-shadow: 0 0 5px 1px #736a6ab5;
+  z-index: 1;
 }
 
 .popup-title {

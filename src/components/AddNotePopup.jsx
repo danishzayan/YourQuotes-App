@@ -19,7 +19,7 @@ const AddNotePopup = ({ handleAddNote, setAddNotePopupIsOpen }) => {
       setNoteText("");
       setAddNotePopupIsOpen(false);
     } else {
-      toast.error('Couldn\'t add an empty note', {
+      toast.error('Couldn\'t add an empty..', {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,

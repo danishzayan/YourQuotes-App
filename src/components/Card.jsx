@@ -4,11 +4,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as htmlToImage from 'html-to-image';
 
 const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
-  // code for clipboard and toastify
-
+  
+  // code for listen text speech
   const msg = new SpeechSynthesisUtterance();
   msg.text = text;
+  const talk = () => {
+    window.speechSynthesis.speak(msg);
+  };
 
+  // code for clipboard and toastify
   const handleCopyText = () => {
     navigator.clipboard.writeText(text).then(
       (success) =>
@@ -44,9 +48,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
     }
   };
 
-  const talk = () => {
-    window.speechSynthesis.speak(msg);
-  };
+  
   // code for convert html to image
   const domEl = useRef(null);
   const downloadImage = async () => {
@@ -64,6 +66,8 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
         ref={domEl}
         style={{
           background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
+          // border: `1px solid #${color2} 150%`,
+          // boxShadow: `#${color2}  0px 0px 8px`
         }}
       >
         <div className="text">
