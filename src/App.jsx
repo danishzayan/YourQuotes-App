@@ -80,7 +80,7 @@ function App() {
     if (id == ID)
       axios.delete(
         `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,
-        setNotes(newNotes),
+        setNotes(newNotes)
       );
     else
       toast("📋 This is not YourQutoes", {
@@ -130,12 +130,9 @@ function App() {
         ) : (
           <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
             <div className="wrapper"></div>
-            <Search handleSearchNote={setSearchText} />
             <CardsList
               notes={notes.filter((note) =>
-                note.text
-                  .toUpperCase()
-                  .includes(searchText.toLocaleUpperCase()),
+                note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
               )}
               handleAddNote={addNote}
               handleDeleteNote={deleteNote}
