@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from "react-toastify";
 
 const AddNote = ({ handleAddNote }) => {
 
@@ -17,10 +18,22 @@ const AddNote = ({ handleAddNote }) => {
     if(noteText.trim().length > 0) {
       handleAddNote(noteText);
       setNoteText('');
+    }else {
+      toast.error('Couldn\'t add an empty note', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   }
 
   return (
+    <>
+    <ToastContainer/>
     <div className="card new" >
       <textarea
         cols="10"
@@ -35,6 +48,7 @@ const AddNote = ({ handleAddNote }) => {
         <button className="save" onClick={ handleSave }>Post</button>
       </div>
     </div>
+    </>
   );
 };
 

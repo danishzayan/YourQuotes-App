@@ -83,6 +83,7 @@ body {
   transform: translate(-50%, -50%);
   width: 320px;
   box-shadow: 0 0 5px 1px black;
+  z-index: 1
 }
 
 .popup-title {
