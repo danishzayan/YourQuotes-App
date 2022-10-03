@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import { Player } from "@lottiefiles/react-lottie-player";
 import AddNotePopup from "./components/AddNotePopup";
 import CardsList from "./components/CardsList";
 import { nanoid } from "nanoid";
@@ -36,11 +37,15 @@ function App() {
 
   const [addNotePopupIsOpen, setAddNotePopupIsOpen] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+
   // read operaton
   const getData = () => {
+    setLoading(true);
     axios
       .get("https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app")
       .then((res) => {
+        setLoading(false);
         console.log(res.data);
         setNotes(res.data);
       });
@@ -66,7 +71,7 @@ function App() {
     //create operation
     axios.post(
       "https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app",
-      newNote
+      newNote,
     );
   };
 
@@ -76,7 +81,7 @@ function App() {
     if (id == ID)
       axios.delete(
         `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,
-        setNotes(newNotes)
+        setNotes(newNotes),
       );
     else
       toast("📋 This is not YourQutoes", {
@@ -106,38 +111,59 @@ function App() {
         onClick={checkIfClickedInside}
       >
         <Header handleToggleDarkMode={setDarkMode} />
-        <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
-          <div className="wrapper"></div>
-          <Search handleSearchNote={setSearchText} />
-          <CardsList
-            notes={notes.filter((note) =>
-              note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
-            )}
-            handleAddNote={addNote}
-            handleDeleteNote={deleteNote}
-          />
-          <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-          <ToastContainer />
-          <button
-            className="add-note-btn"
-            onClick={() => {
-              setAddNotePopupIsOpen(true);
+        {loading ? (
+          <div
+            style={{
+              display: "flex",
+              height: "80vh",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-            data-target="add-quote"
           >
-            <i class="fa-solid fa-plus" data-target="add-quote"></i>
-          </button>
-        </div>
+            <Player
+              autoplay
+              loop
+              speed={1}
+              src="https://assets1.lottiefiles.com/packages/lf20_p8bfn5to.json"
+              style={{ height: "200px", width: "200px" }}
+            ></Player>
+          </div>
+        ) : (
+          <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
+            <div className="wrapper"></div>
+            <Search handleSearchNote={setSearchText} />
+            <CardsList
+              notes={notes.filter((note) =>
+                note.text
+                  .toUpperCase()
+                  .includes(searchText.toLocaleUpperCase()),
+              )}
+              handleAddNote={addNote}
+              handleDeleteNote={deleteNote}
+            />
+            <ToastContainer
+              position="top-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            <ToastContainer />
+            <button
+              className="add-note-btn"
+              onClick={() => {
+                setAddNotePopupIsOpen(true);
+              }}
+              data-target="add-quote"
+            >
+              <i class="fa-solid fa-plus" data-target="add-quote"></i>
+            </button>
+          </div>
+        )}
         {addNotePopupIsOpen && (
           <AddNotePopup
             handleAddNote={addNote}
