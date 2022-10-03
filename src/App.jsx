@@ -17,6 +17,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ID = nanoid();
 function App() {
+
+  
+
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
 
@@ -38,6 +41,17 @@ function App() {
   const [addNotePopupIsOpen, setAddNotePopupIsOpen] = useState(false);
 
   const [loading, setLoading] = useState(true);
+
+  /*Checks the localstorage to see if the dark mode was enabled during last visit*/
+  useEffect(() => {
+    if(!localStorage.getItem("darkmode")){
+      return
+    }
+    let darkmode = JSON.parse(localStorage.getItem("darkmode"));
+    if(darkmode.isDark == true){
+      setDarkMode(true);
+    }
+  }, []);
 
   // read operaton
   const getData = () => {

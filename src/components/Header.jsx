@@ -12,7 +12,16 @@ const Header = ({ handleToggleDarkMode, setSearch }) => {
           <input
             type="checkbox"
             onClick={() =>
-              handleToggleDarkMode((previousDarkMode) => !previousDarkMode)
+              {
+                handleToggleDarkMode((previousDarkMode) => {
+                  let darkmode = {
+                    "isDark" : previousDarkMode == true ? false : true
+                  }
+                  localStorage.setItem("darkmode", JSON.stringify(darkmode));
+                  return !previousDarkMode
+                });
+                
+              }
             }
           />
 
