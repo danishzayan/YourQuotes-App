@@ -138,6 +138,8 @@ function App() {
                   .toUpperCase()
                   .includes(searchText.toLocaleUpperCase()),
               )}
+              // we need this to see if the search input is empty
+              searchText={searchText}
               handleAddNote={addNote}
               handleDeleteNote={deleteNote}
             />
@@ -160,7 +162,7 @@ function App() {
               }}
               data-target="add-quote"
             >
-              <i class="fa-solid fa-plus" data-target="add-quote"></i>
+              <i class="fa-solid fa-plus" data-target="add-quote" title="add note"></i>
             </button>
           </div>
         )}
