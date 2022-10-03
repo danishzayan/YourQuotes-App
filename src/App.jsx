@@ -109,7 +109,7 @@ function App() {
         className={`${darkMode && "dark-mode"}`}
         onClick={checkIfClickedInside}
       >
-        <Header handleToggleDarkMode={setDarkMode} />
+        <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} />
         {loading ? (
           <div
             style={{
