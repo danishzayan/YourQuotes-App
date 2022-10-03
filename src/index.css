@@ -37,6 +37,13 @@ body {
   cursor: pointer;
 }
 
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .cards-list {
   display: grid;
   grid-gap: 1rem;

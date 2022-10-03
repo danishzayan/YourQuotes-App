@@ -9,6 +9,7 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Bars } from "react-loader-spinner";
 
 //API Details
 // 20220912223415
@@ -36,13 +37,17 @@ function App() {
 
   const [addNotePopupIsOpen, setAddNotePopupIsOpen] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   // read operaton
   const getData = () => {
+    setIsLoading(true);
     axios
       .get("https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app")
       .then((res) => {
         console.log(res.data);
         setNotes(res.data);
+        setIsLoading(false);
       });
   };
 
@@ -109,13 +114,24 @@ function App() {
         <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
           <div className="wrapper"></div>
           <Search handleSearchNote={setSearchText} />
-          <CardsList
-            notes={notes.filter((note) =>
-              note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
-            )}
-            handleAddNote={addNote}
-            handleDeleteNote={deleteNote}
-          />
+          {isLoading ? (
+            <div className="loader-container">
+              <Bars
+                height="80"
+                width="80"
+                color="skyblue"
+                ariaLabel="bars-loading"
+              />
+            </div>
+          ) : (
+            <CardsList
+              notes={notes.filter((note) =>
+                note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
+              )}
+              handleAddNote={addNote}
+              handleDeleteNote={deleteNote}
+            />
+          )}
           <ToastContainer
             position="top-center"
             autoClose={2000}
