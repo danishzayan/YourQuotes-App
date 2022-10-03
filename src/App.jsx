@@ -16,7 +16,6 @@ import "react-toastify/dist/ReactToastify.css";
 // https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app
 
 const ID = nanoid();
-
 function App() {
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
@@ -73,7 +72,7 @@ function App() {
     //create operation
     axios.post(
       "https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app",
-      newNote,
+      newNote
     );
   };
 
@@ -83,7 +82,8 @@ function App() {
     if (id == ID){
       axios.delete(
         `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`);
-        setNotes(newNotes);}
+        setNotes(newNotes);
+    }
     else
       toast("📋 This is not YourQutoes", {
         position: "top-center",
@@ -111,7 +111,7 @@ function App() {
         className={`${darkMode && "dark-mode"}`}
         onClick={checkIfClickedInside}
       >
-        <Header handleToggleDarkMode={setDarkMode} />
+        <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} />
         {loading ? (
           <div
             style={{
@@ -132,12 +132,9 @@ function App() {
         ) : (
           <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
             <div className="wrapper"></div>
-            <Search handleSearchNote={setSearchText} />
             <CardsList
               notes={notes.filter((note) =>
-                note.text
-                  .toUpperCase()
-                  .includes(searchText.toLocaleUpperCase()),
+                note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
               )}
               handleAddNote={addNote}
               handleDeleteNote={deleteNote}
