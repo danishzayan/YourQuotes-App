@@ -13,6 +13,7 @@ const CardsList = ({ notes, handleAddNote, handleDeleteNote }) => {
           color2={note.color2}
           text={note.text}
           date={note.date}
+          writer={note.writer}
           handleDeleteNote={handleDeleteNote}
         />
       ))}
