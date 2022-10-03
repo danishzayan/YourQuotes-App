@@ -24,7 +24,7 @@ npm run dev
 - Fix Issue: **Attention** Every body can post YourQutoes but should not be delete qutoes from everybody.. whenever other people try to delete your qutoes show tostify msg "This is not YourQutoes" or from Which system post Qutoes from only that system can delete qutoes not any other system and this funtionality should work on without login...
 - Fix issue: Share gradi
 ent card image with social meaida without card footer icon and even should share app link with image.
-- Add a beautiful Loader with name YourQuotes when YourQuotes app will be open so it will be loading.
+- Add a beautiful Loader with name YourQuotes when YourQuotes app will be open so it will be loading. **( done ✅ )**
 - Add a small loader in the bottom when data is fetching from api then it will load after that YourQuotes will be show 
 - Fix Issue: Remove "type to add your-quotes" post card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup should be open for posting qutoes..  **( done ✅ )**
 - Add a sound button to Listen Quotes in a card  **( done ✅ )**
