@@ -23,6 +23,20 @@ body {
   min-height: 100vh;
 }
 
+.add-note-btn {
+  background-color: tomato;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
 .cards-list {
   display: grid;
   grid-gap: 1rem;
@@ -62,14 +76,35 @@ body {
   border: none;
 }
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  box-shadow: 0 0 5px 1px black;
+  z-index: 1
+}
+
+.popup-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: rgb(56, 56, 56);
+  text-align: center;
+}
+
+.add-overlay {
+  opacity: 0.5;
+}
+
 textarea {
   background: #67e4d8;
   border: none;
   resize: none;
-
   border: 1px solid #35c8bab8;
   border-radius: 8px;
   padding: 5px;
+  margin-bottom: 0.3rem;
 }
 
 textarea:focus {
@@ -146,7 +181,7 @@ textarea:focus {
   font-size: 14px;
   color: #000000;
   cursor: pointer;
-  /* margin-right: 10px; */
+  margin-right: 10px;
 }
 
 .footer .fa-share:before {
@@ -158,6 +193,13 @@ textarea:focus {
 }
 
 .footer .fa-download:before {
+  margin-right: 10px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.footer .fa-volume-up:before {
   margin-right: 10px;
   color: #000000;
   cursor: pointer;
@@ -214,6 +256,7 @@ textarea:focus {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: sticky;
   top: 0;
+  z-index: 100;
   width: 100%;
   overflow: hidden;
 }
