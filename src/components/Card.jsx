@@ -30,7 +30,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
     if (navigator.share) {
       navigator
         .share({
-          title: `${text}`,
+          text: `${text}`,
           url: 'https://your-quotess.netlify.app/',
         })
         .then(() => {
