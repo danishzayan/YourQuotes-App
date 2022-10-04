@@ -6,7 +6,7 @@
 <a href="https://github.com/danishzayan/YourQuotes-App"><img src="https://visitor-badge.laobi.icu/badge?page_id=danishzayan/YourQuotes-App" alt="Number of Visitors"></a>
 <a href="https://github.com/danishzayan/YourQuotes-App/stargazers"><img src="https://img.shields.io/github/stars/danishzayan/YourQuotes-App" alt="github stars"></a>
 <a href="https://github.com/danishzayan/YourQuotes-App/network/members"><img src="https://img.shields.io/github/forks/danishzayan/YourQuotes-App" alt="github forks"></a>
-<a href="https://thepranaygupta.github.io/"><img src="https://img.shields.io/badge/website-up-yellow" alt="website up"></a>
+<a href="#"><img src="https://img.shields.io/badge/website-up-yellow" alt="website up"></a>
 <a href="https://www.linkedin.com/in/danishzayan/"><img src="https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg" alt="linkedin"></a>
 
 ## YourQuotes-App
