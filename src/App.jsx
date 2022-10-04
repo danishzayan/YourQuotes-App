@@ -119,13 +119,15 @@ function App() {
               height: "80vh",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection:"column"
             }}
           >
+          <h1>Hold Up, Quotes are loading</h1>
             <Player
               autoplay
               loop
               speed={1}
-              src="https://assets1.lottiefiles.com/packages/lf20_p8bfn5to.json"
+              src="https://assets4.lottiefiles.com/packages/lf20_b88nh30c.json"
               style={{ height: "200px", width: "200px" }}
             ></Player>
           </div>
