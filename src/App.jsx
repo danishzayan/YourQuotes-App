@@ -127,22 +127,7 @@ function App() {
       >
         <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} />
         {loading ? (
-          <div
-            style={{
-              display: "flex",
-              height: "80vh",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Player
-              autoplay
-              loop
-              speed={1}
-              src="https://assets1.lottiefiles.com/packages/lf20_p8bfn5to.json"
-              style={{ height: "200px", width: "200px" }}
-            ></Player>
-          </div>
+          <div className="lds-ring" ><div></div><div></div><div></div><div></div></div>
         ) : (
           <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
             <div className="wrapper"></div>
