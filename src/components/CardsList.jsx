@@ -3,7 +3,6 @@ import Card from "./Card";
 import AddNote from "./addNote";
 
 const CardsList = ({ notes, handleAddNote, handleDeleteNote }) => {
-
   return (
     <div className="cards-list">
       {[...notes].reverse().map((note) => (

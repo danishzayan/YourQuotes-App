@@ -26,7 +26,7 @@ function App() {
       color1: randomColor1,
       color2: randomColor2,
       text: "this is the note pad app text",
-      writer:`Writer's name`,
+      writer: `Writer's name`,
       date: "15/06/2021",
     },
   ]);
@@ -55,36 +55,36 @@ function App() {
     getData();
   }, []);
 
-  const addNote = (text,writer) => {
+  const addNote = async (text, writer) => {
     const date = new Date();
     const newNote = {
-      id: ID,
       color1: randomColor1,
       color2: randomColor2,
       text: text,
-      writer:writer,
+      writer: writer,
       date: date.toLocaleDateString(),
     };
     const newNotes = [...notes, newNote];
-    setNotes(newNotes);
     console.log(newNotes);
 
     //create operation
-    axios.post(
+    await axios.post(
       "https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app",
       newNote
     );
+    getData();
   };
 
-  const deleteNote = (id) => {
+  const deleteNote = async (id) => {
+    console.log(id);
     const newNotes = notes.filter((note) => note.id !== id);
     //delete operation
-    if (id == ID){
-      axios.delete(
-        `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`);
-        setNotes(newNotes);
-    }
-    else
+    const { data } = await axios.delete(
+      `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`
+    );
+    setNotes(newNotes);
+    if (data) {
+    } else
       toast("📋 This is not YourQutoes", {
         position: "top-center",
         autoClose: 2000,

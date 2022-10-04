@@ -1,10 +1,9 @@
-import React, { useRef } from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import * as htmlToImage from 'html-to-image';
+import React, { useRef } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import * as htmlToImage from "html-to-image";
 
 const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
-  
   // code for listen text speech
   const msg = new SpeechSynthesisUtterance();
   msg.text = text;
@@ -16,8 +15,8 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
   const handleCopyText = () => {
     navigator.clipboard.writeText(text).then(
       (success) =>
-        toast('📋 Successfully Copied Text!', {
-          position: 'top-center',
+        toast("📋 Successfully Copied Text!", {
+          position: "top-center",
           autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -25,7 +24,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
           draggable: true,
           progress: undefined,
         }),
-      (err) => alert('Error copying text')
+      (err) => alert("Error copying text")
     );
   };
 
@@ -35,26 +34,25 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
       navigator
         .share({
           text: `${text}`,
-          url: 'https://your-quotess.netlify.app/',
+          url: "https://your-quotess.netlify.app/",
         })
         .then(() => {
-          console.log('Thanks for sharing!');
+          console.log("Thanks for sharing!");
         })
         .catch((err) => {
-          console.log('Error while using Web share API:' + err);
+          console.log("Error while using Web share API:" + err);
         });
     } else {
       alert("Browser doesn't support this API !");
     }
   };
 
-  
   // code for convert html to image
   const domEl = useRef(null);
   const downloadImage = async () => {
     const dataUrl = await htmlToImage.toPng(domEl.current);
-    const link = document.createElement('a');
-    link.download = 'your-quotes.png';
+    const link = document.createElement("a");
+    link.download = "your-quotes.png";
     link.href = dataUrl;
     link.click();
   };
@@ -76,7 +74,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
           <i className="fas fa-quote-right"></i>
         </div>
         <div className="footer-writer">
-          <span>~ By {writer ? writer : 'Danish'}</span>
+          <span>~ By {writer ? writer : "Danish"}</span>
           <div className="footer">
             <small>
               <i className="fa-solid fa-calendar-day"></i>
@@ -86,7 +84,10 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
               <i className="fa-solid fa-download" onClick={downloadImage}></i>
               <i className="fa-solid fa-volume-up" onClick={talk}></i>
               <i className="fa-solid fa-share" onClick={handleShareText}></i>
-              <i className="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
+              <i
+                className="fa-sharp fa-solid fa-copy"
+                onClick={handleCopyText}
+              ></i>
               <i
                 className="fa-solid fa-trash"
                 onClick={() => handleDeleteNote(id)}
