@@ -5,7 +5,7 @@ import AddNote from "./addNote";
 const CardsList = ({ notes, handleAddNote, handleDeleteNote,searchText }) => {
   return (
     <div>
-      {searchText !== "" && <h1>{notes.length} results</h1>}
+      {searchText !== "" && <h3>{notes.length} Results</h3>}
     <div className="cards-list">
       {[...notes].reverse().map((note) => (
         <Card
