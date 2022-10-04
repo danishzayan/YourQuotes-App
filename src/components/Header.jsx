@@ -1,6 +1,22 @@
 import React from "react";
 import Search from "./Search";
+
 const Header = ({ handleToggleDarkMode, setSearch }) => {
+
+  function checkIfDark() {
+      let darkmode = JSON.parse(localStorage.getItem("darkmode"));
+      
+      if(!darkmode){
+        return false
+      }
+
+      if(darkmode.isDark){
+        return true
+      }
+
+      return false
+  }
+
   return (
     <div className="header">
       <div className="header-top">
@@ -12,8 +28,20 @@ const Header = ({ handleToggleDarkMode, setSearch }) => {
           <input
             type="checkbox"
             onClick={() =>
-              handleToggleDarkMode((previousDarkMode) => !previousDarkMode)
+              {
+                handleToggleDarkMode((previousDarkMode) => {
+                  let darkmode = {
+                    "isDark" : previousDarkMode == true ? false : true
+                  }
+                  localStorage.setItem("darkmode", JSON.stringify(darkmode));
+
+                  return !previousDarkMode
+                });
+                
+              }
             }
+
+            defaultChecked={checkIfDark()}
           />
 
           <span className="slider round"></span>
