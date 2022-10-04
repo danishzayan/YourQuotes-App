@@ -45,7 +45,7 @@ const AddNotePopup = ({ handleAddNote, setAddNotePopupIsOpen }) => {
           onChange={handleChange}
           value={noteText}
           data-target="popup"
-          placeholder="Enter your Quote..."
+          placeholder="Enter your quote..."
         ></textarea>
         <input type="text" placeholder="Writer Name..." data-target="popup" value={noteWriter} onChange={(e)=>{setNoteWriter(e.target.value)}}/>
         <div className="footer" data-target="popup">

@@ -35,6 +35,11 @@ body {
   bottom: 20px;
   right: 20px;
   cursor: pointer;
+  transition: 0.1s all;
+}
+
+.add-note-btn:hover {
+  transform: scale(1.1) rotate(3deg);
 }
 
 .cards-list {
