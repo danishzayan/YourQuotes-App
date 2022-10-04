@@ -1,17 +1,15 @@
 # YourQuotes-App 📱
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5dc02221-5e8b-406d-a59b-72c0a563baa6/deploy-status)](https://app.netlify.com/sites/your-quotess/deploys)
+YourQuotes is a user friendly and eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image. it is made with **Vite+React**.
 
-<a href="https://github.com/danishzayan/YourQuotes-App"><img src="https://sloc.xyz/github/danishzayan/YourQuotes-App" alt="Total lines"></a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5dc02221-5e8b-406d-a59b-72c0a563baa6/deploy-status)](https://app.netlify.com/sites/your-quotess/deploys)
 <a href="https://github.com/danishzayan/YourQuotes-App"><img src="https://visitor-badge.laobi.icu/badge?page_id=danishzayan/YourQuotes-App" alt="Number of Visitors"></a>
 <a href="https://github.com/danishzayan/YourQuotes-App/stargazers"><img src="https://img.shields.io/github/stars/danishzayan/YourQuotes-App" alt="github stars"></a>
 <a href="https://github.com/danishzayan/YourQuotes-App/network/members"><img src="https://img.shields.io/github/forks/danishzayan/YourQuotes-App" alt="github forks"></a>
-<a href="#"><img src="https://img.shields.io/badge/website-up-yellow" alt="website up"></a>
+<a href="https://your-quotess.netlify.app/"><img src="https://img.shields.io/badge/website-up-yellow" alt="website up"></a>
 <a href="https://www.linkedin.com/in/danishzayan/"><img src="https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg" alt="linkedin"></a>
 
-## YourQuotes-App
-
-YourQuotes is a user friendly and eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image. it is made with **Vite+React**.
+![YourQuotes-Appss](https://user-images.githubusercontent.com/46997504/193505249-6289857c-968e-4093-9b0b-60312a2e2faa.PNG)
 
 ## Run YourQuotes-App
 
@@ -40,10 +38,6 @@ npm run dev
 - Fix Issue: Remove "type to add your-quotes" post card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup should be open for posting qutoes.. **( done ✅ )**
 - Add a sound button to Listen Quotes in a card **( done ✅ )**
 - Fix Issue: Quotes should be search in both Capital and small letter **( done ✅ )**
-
-## YourQuotes-App ScreenShot 📷
-
-![YourQuotes-Appss](https://user-images.githubusercontent.com/46997504/193505249-6289857c-968e-4093-9b0b-60312a2e2faa.PNG)
 
 ## Contributing 👨‍💻
 
