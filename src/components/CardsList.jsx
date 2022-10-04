@@ -7,13 +7,14 @@ const CardsList = ({ notes, handleAddNote, handleDeleteNote,searchText }) => {
     <div>
       {searchText !== "" && <h1>{notes.length} results</h1>}
     <div className="cards-list">
-      {notes.map((note) => (
+      {[...notes].reverse().map((note) => (
         <Card
           id={note.id}
           color1={note.color1}
           color2={note.color2}
           text={note.text}
           date={note.date}
+          writer={note.writer}
           handleDeleteNote={handleDeleteNote}
         />
       ))}

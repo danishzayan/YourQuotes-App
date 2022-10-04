@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as htmlToImage from 'html-to-image';
 
-const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
+const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
   
   // code for listen text speech
   const msg = new SpeechSynthesisUtterance();
@@ -71,12 +71,12 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
         }}
       >
         <div className="text">
-          <i class="fas fa-quote-left"></i>
+          <i className="fas fa-quote-left"></i>
           <span>{text}</span>
-          <i class="fas fa-quote-right"></i>
+          <i className="fas fa-quote-right"></i>
         </div>
         <div className="footer-writer">
-          <span>~ By Danish</span>
+          <span>~ By {writer ? writer : 'Danish'}</span>
           <div className="footer">
             <small>
               <i className="fa-solid fa-calendar-day"></i>

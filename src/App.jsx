@@ -16,7 +16,6 @@ import "react-toastify/dist/ReactToastify.css";
 // https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app
 
 const ID = nanoid();
-
 function App() {
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
@@ -27,6 +26,7 @@ function App() {
       color1: randomColor1,
       color2: randomColor2,
       text: "this is the note pad app text",
+      writer:`Writer's name`,
       date: "15/06/2021",
     },
   ]);
@@ -55,13 +55,14 @@ function App() {
     getData();
   }, []);
 
-  const addNote = (text) => {
+  const addNote = (text,writer) => {
     const date = new Date();
     const newNote = {
       id: ID,
       color1: randomColor1,
       color2: randomColor2,
       text: text,
+      writer:writer,
       date: date.toLocaleDateString(),
     };
     const newNotes = [...notes, newNote];
@@ -71,18 +72,18 @@ function App() {
     //create operation
     axios.post(
       "https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app",
-      newNote,
+      newNote
     );
   };
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     //delete operation
-    if (id == ID)
+    if (id == ID){
       axios.delete(
-        `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,
-        setNotes(newNotes),
-      );
+        `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`);
+        setNotes(newNotes);
+    }
     else
       toast("📋 This is not YourQutoes", {
         position: "top-center",
@@ -110,7 +111,7 @@ function App() {
         className={`${darkMode && "dark-mode"}`}
         onClick={checkIfClickedInside}
       >
-        <Header handleToggleDarkMode={setDarkMode} />
+        <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} />
         {loading ? (
           <div
             style={{
@@ -131,12 +132,9 @@ function App() {
         ) : (
           <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
             <div className="wrapper"></div>
-            <Search handleSearchNote={setSearchText} />
             <CardsList
               notes={notes.filter((note) =>
-                note.text
-                  .toUpperCase()
-                  .includes(searchText.toLocaleUpperCase()),
+                note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
               )}
               // we need this to see if the search input is empty
               searchText={searchText}
