@@ -12,7 +12,12 @@ Developer: Danish Kamal */
 }
 
 body {
-  background-color: rgb(248, 248, 248);
+  /* background-color: rgb(248, 248, 248); */
+  background-image: url("../src/assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .container {
@@ -336,7 +341,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* style for dark mode  */
+/* start style for dark mode  */
 .dark-mode {
   background-color: #000000;
 }
@@ -344,6 +349,11 @@ input:checked + .slider:before {
 .dark-mode h1 {
   color: #fff;
 }
+
+.dark-mode h3 {
+  color: #fff;
+}
+/* end style for dark mode  */
 
 .header-left {
   display: flex;
