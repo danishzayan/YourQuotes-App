@@ -12,8 +12,9 @@ Developer: Danish Kamal */
 }
 
 body {
-  /* background-color: rgb(248, 248, 248); */
-  background-image: url("../src/assets/images/background.jpg");
+  background-color: rgb(248, 248, 248);
+  /* background-image: url("../src/assets/images/background.jpg"); */
+  background:linear-gradient(rgba(6, 6, 6, 0.243), rgba(255, 255, 0, 0)), url("../src/assets/images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -50,7 +51,6 @@ body {
 }
 
 .card {
-  background-color: #8afed6;
   border-radius: 10px;
   padding: 1rem;
   min-height: 240px;
@@ -59,6 +59,13 @@ body {
   justify-content: space-between;
   white-space: pre-wrap;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+
+  /* Code for glass morphism */
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.47);
 }
 
 .card span {
@@ -342,9 +349,9 @@ input:checked + .slider:before {
 }
 
 /* start style for dark mode  */
-.dark-mode {
+/* .dark-mode {
   background-color: #000000;
-}
+} */
 
 .dark-mode h1 {
   color: #fff;

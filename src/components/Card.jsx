@@ -65,8 +65,9 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
         className="card"
         ref={domEl}
         style={{
-          background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
-          // border: `1px solid #${color2} 150%`,
+          // background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
+          // background: `#${color1} / 35%`
+          // border: `1px solid #${color2}`,
           // boxShadow: `#${color2}  0px 0px 8px`
         }}
       >
