@@ -3,7 +3,15 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as htmlToImage from 'html-to-image';
 
-const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
+const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
+  
+  // code for listen text speech
+  const msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  const talk = () => {
+    window.speechSynthesis.speak(msg);
+  };
+
   // code for clipboard and toastify
   const handleCopyText = () => {
     navigator.clipboard.writeText(text).then(
@@ -26,7 +34,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
     if (navigator.share) {
       navigator
         .share({
-          title: `${text}`,
+          text: `${text}`,
           url: 'https://your-quotess.netlify.app/',
         })
         .then(() => {
@@ -40,6 +48,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
     }
   };
 
+  
   // code for convert html to image
   const domEl = useRef(null);
   const downloadImage = async () => {
@@ -57,28 +66,31 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote }) => {
         ref={domEl}
         style={{
           background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
+          // border: `1px solid #${color2} 150%`,
+          // boxShadow: `#${color2}  0px 0px 8px`
         }}
       >
         <div className="text">
-          <i class="fas fa-quote-left"></i>
+          <i className="fas fa-quote-left"></i>
           <span>{text}</span>
-          <i class="fas fa-quote-right"></i>
+          <i className="fas fa-quote-right"></i>
         </div>
         <div className="footer-writer">
-          <span>~ By Danish</span>
+          <span>~ By {writer ? writer : 'Danish'}</span>
           <div className="footer">
             <small>
               <i className="fa-solid fa-calendar-day"></i>
               {date}
             </small>
             <div className="footer-icon">
-              <i class="fa-solid fa-download" onClick={downloadImage}></i>
-              <i class="fa-solid fa-share" onClick={handleShareText}></i>
-              <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText}></i>
+              <i class="fa-solid fa-download" onClick={downloadImage} title="download"></i>
+              <i class="fa-solid fa-volume-up" onClick={talk} title="volume"></i>
+              <i class="fa-solid fa-share" onClick={handleShareText} title="share"></i>
+              <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText} title="copy"></i>
               <i
                 className="fa-solid fa-trash"
                 onClick={() => handleDeleteNote(id)}
-              ></i>
+              title="delete" ></i>
             </div>
           </div>
         </div>
