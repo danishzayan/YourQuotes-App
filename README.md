@@ -13,6 +13,8 @@ YourQuotes is a user friendly and eye catching App. User can post your qutoes wi
 <a href="https://your-quotess.netlify.app/"><img src="https://img.shields.io/badge/website-up-yellow" alt="website up"></a>
 <a href="https://www.linkedin.com/in/danishzayan/"><img src="https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg" alt="linkedin"></a>
 
+## Screenshot of App 📷
+
 ![YourQuotes-Appss](https://user-images.githubusercontent.com/46997504/193505249-6289857c-968e-4093-9b0b-60312a2e2faa.PNG)
 
 ## Run YourQuotes-App
@@ -45,6 +47,7 @@ npm run dev
 
 ## Contributing 👨‍💻
 
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 - Contributions make the open source community such an amazing place to learn, inspire, and create.
 - Any contributions you make are **greatly appreciated**.
 - Check out our [contribution guidelines](/CONTRIBUTING.md) for more information.
@@ -64,7 +67,7 @@ YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) fi
 
 [![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)
 
-Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🍻<br /> <br />
+Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking <br /> <br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" />
