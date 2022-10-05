@@ -1,0 +1,12 @@
+{
+    "name": "YourQuotes",
+    "start_url": "./index.html",
+    "scope": ".",
+    "display": "standalone",
+    "theme_color": "#fd5101",
+    "background_color": "#f8f8f8",
+    "description": "YourQuotes is a user friendly and an eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image..",
+    "dir": "ltr",
+    "lang": "en-EN",
+    "orientation": "any"
+}
