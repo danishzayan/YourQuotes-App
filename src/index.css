@@ -397,6 +397,10 @@ input:checked + .slider:before {
   .search {
     width: 80%;
   }
+  .search:focus-within {
+    width: 100%;
+  }
+  
   .sm-hide {
     display: none;
   }
