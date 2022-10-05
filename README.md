@@ -5,7 +5,11 @@ YourQuotes is a user friendly and eye catching App. User can post your qutoes wi
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5dc02221-5e8b-406d-a59b-72c0a563baa6/deploy-status)](https://app.netlify.com/sites/your-quotess/deploys)
 <a href="https://github.com/danishzayan/YourQuotes-App"><img src="https://visitor-badge.laobi.icu/badge?page_id=danishzayan/YourQuotes-App" alt="Number of Visitors"></a>
 <a href="https://github.com/danishzayan/YourQuotes-App/stargazers"><img src="https://img.shields.io/github/stars/danishzayan/YourQuotes-App" alt="github stars"></a>
+[![GitHub contributors](https://img.shields.io/github/contributors/danishzayan/YourQuotes-App.svg)](https://GitHub.com/danishzayan/YourQuotes-App/graphs/contributors/)
 <a href="https://github.com/danishzayan/YourQuotes-App/network/members"><img src="https://img.shields.io/github/forks/danishzayan/YourQuotes-App" alt="github forks"></a>
+[![GitHub commits](https://badgen.net/github/commits/danishzayan/YourQuotes-App)](https://github.com/danishzayan/YourQuotes-App/commit/)
+[![GitHub issues](https://img.shields.io/github/issues/danishzayan/YourQuotes-App.svg)](https://GitHub.com/danishzayan/YourQuotes-App/issues/)
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/danishzayan/YourQuotes-App.svg)](https://GitHub.com/danishzayan/YourQuotes-App/issues?q=is%3Aissue+is%3Aclosed)
 <a href="https://your-quotess.netlify.app/"><img src="https://img.shields.io/badge/website-up-yellow" alt="website up"></a>
 <a href="https://www.linkedin.com/in/danishzayan/"><img src="https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg" alt="linkedin"></a>
 
@@ -56,7 +60,10 @@ YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) fi
 <td align="center"><a href="https://github.com/danishzayan"><img src="https://avatars.githubusercontent.com/u/46997504?v=4" width="100px;" alt=""/><br /><sub><b>Danish Kamal</b></sub></a></td>
   </tr>
 </table>
-<h2>Project Contributors ⭐</h2> 
+<h2>Project Contributors ⭐</h2>
+
+[![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)
+
 Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🍻<br /> <br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
@@ -65,5 +72,5 @@ Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep 
 
 <hr>
 <p align="center">
-  Made in :heart: INDIA and ⭐ Staring the repo.
+  Made in :heart: INDIA and ⭐ Staring the repo..
 </p>
