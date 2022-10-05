@@ -229,7 +229,7 @@ textarea:focus {
 .search:focus-within {
   border: solid 2px #ffffff;
   caret-color: #ffffff;
-  width: 100%;
+  width: 75%;
 }
 
 .search input {
@@ -363,7 +363,7 @@ input:checked + .slider:before {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  width: 40%;
+  width: auto;
 }
 
 .header-right{
