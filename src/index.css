@@ -51,7 +51,9 @@ body {
 }
 
 .card {
+  background: linear-gradient(40deg, rgb(101, 48, 146) -200%, rgb(232, 230, 64) 150%);
   border-radius: 10px;
+  border-bottom: 5px solid rgb(255 255 255 / 25%);
   padding: 1rem;
   min-height: 240px;
   display: flex;
@@ -59,13 +61,6 @@ body {
   justify-content: space-between;
   white-space: pre-wrap;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-
-  /* Code for glass morphism */
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 0.47);
 }
 
 .card span {

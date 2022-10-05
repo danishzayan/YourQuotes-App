@@ -34,7 +34,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
     if (navigator.share) {
       navigator
         .share({
-          text: `${text}`,
+          text: `${text} <br />`,
           url: 'https://your-quotess.netlify.app/',
         })
         .then(() => {
@@ -65,10 +65,8 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
         className="card"
         ref={domEl}
         style={{
-          // background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
-          // background: `#${color1} / 35%`
+          background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
           // border: `1px solid #${color2}`,
-          // boxShadow: `#${color2}  0px 0px 8px`
         }}
       >
         <div className="text">
