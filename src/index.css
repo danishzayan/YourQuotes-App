@@ -366,6 +366,15 @@ input:checked + .slider:before {
   width: 40%;
 }
 
+.header-right{
+  display: flex;
+  flex-direction: row;
+  gap:2rem;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40%;
+}
+
 .sm-show {
   display: none;
 }
