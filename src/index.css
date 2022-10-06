@@ -3,6 +3,9 @@ Date: 07-08-2022
 Developer: Danish Kamal */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap");
+html{
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -229,7 +232,7 @@ textarea:focus {
 .search:focus-within {
   border: solid 2px #ffffff;
   caret-color: #ffffff;
-  width: 100%;
+  width: 75%;
 }
 
 .search input {
@@ -363,6 +366,15 @@ input:checked + .slider:before {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+  width: auto;
+}
+
+.header-right{
+  display: flex;
+  flex-direction: row;
+  gap:2rem;
+  align-items: center;
+  justify-content: flex-end;
   width: 40%;
 }
 
@@ -388,6 +400,10 @@ input:checked + .slider:before {
   .search {
     width: 80%;
   }
+  .search:focus-within {
+    width: 100%;
+  }
+  
   .sm-hide {
     display: none;
   }

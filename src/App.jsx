@@ -10,6 +10,7 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 //API Details
 // 20220912223415
@@ -167,8 +168,10 @@ function App() {
               pauseOnHover
             />
             <ToastContainer />
+
             <button
               className="add-note-btn"
+              style={{marginRight:"60px",marginBottom:"-2px"}}
               onClick={() => {
                 setAddNotePopupIsOpen(true);
               }}
@@ -176,6 +179,8 @@ function App() {
             >
               <i class="fa-solid fa-plus" data-target="add-quote" title="add note"></i>
             </button>
+            <div style={{margin:"0px"}} className="add-note-btn"><ScrollToTop /></div>
+
           </div>
         )}
         {addNotePopupIsOpen && (
@@ -184,6 +189,7 @@ function App() {
             setAddNotePopupIsOpen={setAddNotePopupIsOpen}
           />
         )}
+        
       </div>
     </>
   );
