@@ -1,29 +1,39 @@
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import * as htmlToImage from "html-to-image";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const Card = ({
-  id,
-  color1,
-  color2,
-  text,
-  date,
-  handleDeleteNote,
-  writer,
-  getNewData,
-}) => {
-  // code for listen text speech
+function ViewQuote(props) {
+
+  const { id } = useParams();
+
+  const [newData,setNewData] = useState({});
+  
+  const getParticularData = async () => {
+     axios
+      .get(`https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`)
+      .then((res) => {
+        setNewData(res.data);
+      });
+  };
+
+  useEffect(()=>{
+    getParticularData();
+  },[]);
+
   const msg = new SpeechSynthesisUtterance();
-  msg.text = text;
+  msg.text = newData.text;
   const talk = () => {
     window.speechSynthesis.speak(msg);
   };
 
   // code for clipboard and toastify
   const handleCopyText = () => {
-    navigator.clipboard.writeText(text).then(
+    navigator.clipboard.writeText(newData.text).then(
       (success) =>
         toast("📋 Successfully Copied Text!", {
           position: "top-center",
@@ -39,12 +49,12 @@ const Card = ({
   };
 
   // code for share button
-  const handleShareText = (id) => {
+  const handleShareText = () => {
     if (navigator.share) {
       navigator
         .share({
-          text: `${text}`,
-          url: `https://your-quotess.netlify.app/users/${id}`,
+          text: `${newData.text}`,
+          url: "https://your-quotess.netlify.app/",
         })
         .then(() => {
           console.log("Thanks for sharing!");
@@ -73,25 +83,23 @@ const Card = ({
         className="card"
         ref={domEl}
         style={{
-          background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
+          background: `linear-gradient(40deg, #${newData.color1} -200%, #${newData.color2} 150%)`,
           // border: `1px solid #${color2} 150%`,
           // boxShadow: `#${color2}  0px 0px 8px`
         }}
       >
-        <div
-          className="text"
-        >
-            <i className="fas fa-quote-left"></i>
-            <span>{text}</span>
-            <i className="fas fa-quote-right"></i>
+        <div className="text">
+          <i className="fas fa-quote-left"></i>
+          <span>{newData.text}</span>
+          <i className="fas fa-quote-right"></i>
         </div>
 
         <div className="footer-writer">
-          <span>~ By {writer ? writer : "Danish"}</span>
+          <span>~ By {newData.writer ? newData.writer : "Danish"}</span>
           <div className="footer">
             <small>
               <i className="fa-solid fa-calendar-day"></i>
-              {date}
+              {newData.date}
             </small>
             <div className="footer-icon">
               <i
@@ -106,7 +114,7 @@ const Card = ({
               ></i>
               <i
                 className="fa-solid fa-share"
-                onClick={()=>{handleShareText(id)}}
+                onClick={handleShareText}
                 title="share"
               ></i>
               <i
@@ -114,11 +122,9 @@ const Card = ({
                 onClick={handleCopyText}
                 title="copy"
               ></i>
-              <Link className=" fa-solid fa-view" title="view" to={`/users/${id}`}>
-              </Link>
               <i
                 className="fa-solid fa-trash"
-                onClick={() => handleDeleteNote(id)}
+                onClick={() => props.handleDeleteNote(newData.id)}
                 title="delete"
               ></i>
             </div>
@@ -127,6 +133,6 @@ const Card = ({
       </div>
     </>
   );
-};
+}
 
-export default Card;
+export default ViewQuote;

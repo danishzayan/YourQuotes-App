@@ -97,6 +97,11 @@ body {
   opacity: 0.5;
 }
 
+.header-link{
+  color: inherit;
+  text-decoration: none;
+}
+
 textarea {
   background: #67e4d8;
   border: none;
@@ -178,6 +183,14 @@ textarea:focus {
 
 .footer .fa-copy:before {
   content: "\f0c5";
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.footer .fa-view:before {
+  content: "\F18F";
   font-size: 14px;
   color: #000000;
   cursor: pointer;

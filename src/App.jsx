@@ -6,10 +6,13 @@ import CardsList from "./components/CardsList";
 import { nanoid } from "nanoid";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
-import Search from "./components/Search";
 import Header from "./components/Header";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import ViewQuote from "./components/ViewQuote";
+
+// We can use inline-style
 
 //API Details
 // 20220912223415
@@ -26,7 +29,7 @@ function App() {
       color1: randomColor1,
       color2: randomColor2,
       text: "this is the note pad app text",
-      writer:`Writer's name`,
+      writer: `Writer's name`,
       date: "15/06/2021",
     },
   ]);
@@ -39,15 +42,26 @@ function App() {
 
   const [loading, setLoading] = useState(true);
 
+  
+
   // read operaton
-  const getData = () => {
+  const getData = async () => {
     setLoading(true);
     axios
-      .get("https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app")
+      .get(`https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/`)
       .then((res) => {
         setLoading(false);
-        console.log(res.data);
         setNotes(res.data);
+      });
+  };
+
+  const getNewData = async (id) => {
+    setLoading(true);
+    axios
+      .get(`https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`)
+      .then((res) => {
+        setLoading(false);
+        setNotes([res.data]);
       });
   };
 
@@ -55,14 +69,14 @@ function App() {
     getData();
   }, []);
 
-  const addNote = (text,writer) => {
+  const addNote = (text, writer) => {
     const date = new Date();
     const newNote = {
       id: ID,
       color1: randomColor1,
       color2: randomColor2,
       text: text,
-      writer:writer,
+      writer: writer,
       date: date.toLocaleDateString(),
     };
     const newNotes = [...notes, newNote];
@@ -79,12 +93,12 @@ function App() {
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     //delete operation
-    if (id == ID){
+    if (id == ID) {
       axios.delete(
-        `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`);
-        setNotes(newNotes);
-    }
-    else
+        `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`
+      );
+      setNotes(newNotes);
+    } else
       toast("📋 This is not YourQutoes", {
         position: "top-center",
         autoClose: 2000,
@@ -111,65 +125,89 @@ function App() {
         className={`${darkMode && "dark-mode"}`}
         onClick={checkIfClickedInside}
       >
-        <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} />
-        {loading ? (
-          <div
-            style={{
-              display: "flex",
-              height: "80vh",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Player
-              autoplay
-              loop
-              speed={1}
-              src="https://assets1.lottiefiles.com/packages/lf20_p8bfn5to.json"
-              style={{ height: "200px", width: "200px" }}
-            ></Player>
-          </div>
-        ) : (
-          <div className={`container ${addNotePopupIsOpen && "add-overlay"}`}>
-            <div className="wrapper"></div>
-            <CardsList
-              notes={notes.filter((note) =>
-                note.text.toUpperCase().includes(searchText.toLocaleUpperCase())
-              )}
-              // we need this to see if the search input is empty
-              searchText={searchText}
-              handleAddNote={addNote}
-              handleDeleteNote={deleteNote}
-            />
-            <ToastContainer
-              position="top-center"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-            <ToastContainer />
-            <button
-              className="add-note-btn"
-              onClick={() => {
-                setAddNotePopupIsOpen(true);
-              }}
-              data-target="add-quote"
-            >
-              <i class="fa-solid fa-plus" data-target="add-quote" title="add note"></i>
-            </button>
-          </div>
-        )}
-        {addNotePopupIsOpen && (
-          <AddNotePopup
-            handleAddNote={addNote}
-            setAddNotePopupIsOpen={setAddNotePopupIsOpen}
+        <BrowserRouter>
+          <Header
+            handleToggleDarkMode={setDarkMode}
+            setSearch={setSearchText}
+            getData={getData}
           />
-        )}
+          {loading ? (
+            <div
+              style={{
+                display: "flex",
+                height: "80vh",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Player
+                autoplay
+                loop
+                speed={1}
+                src="https://assets1.lottiefiles.com/packages/lf20_p8bfn5to.json"
+                style={{ height: "200px", width: "200px" }}
+              ></Player>
+            </div>
+          ) : (
+            
+              <div
+                className={`container ${addNotePopupIsOpen && "add-overlay"}`}
+              >
+                <div className="wrapper"></div>
+                <Routes>
+                <Route
+                  exact path="/"
+                  element={
+                    <CardsList
+                      notes={notes.filter((note) =>
+                        note.text
+                          .toUpperCase()
+                          .includes(searchText.toLocaleUpperCase())
+                      )}
+                      // we need this to see if the search input is empty
+                      searchText={searchText}
+                      handleAddNote={addNote}
+                      handleDeleteNote={deleteNote}
+                      getNewData={getNewData}
+                    />
+                  }
+                />
+                <Route path={`/users/:id`} element={<ViewQuote handleDeleteNote={deleteNote}/>}/>  
+                </Routes>
+                <ToastContainer
+                  position="top-center"
+                  autoClose={2000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                />
+                <ToastContainer />
+                <button
+                  className="add-note-btn"
+                  onClick={() => {
+                    setAddNotePopupIsOpen(true);
+                  }}
+                  data-target="add-quote"
+                >
+                  <i
+                    className="fa-solid fa-plus"
+                    data-target="add-quote"
+                    title="add note"
+                  ></i>
+                </button>
+              </div>
+          )}
+          {addNotePopupIsOpen && (
+            <AddNotePopup
+              handleAddNote={addNote}
+              setAddNotePopupIsOpen={setAddNotePopupIsOpen}
+            />
+          )}
+        </BrowserRouter>
       </div>
     </>
   );
