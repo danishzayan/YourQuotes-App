@@ -74,8 +74,7 @@ const Card = ({
         ref={domEl}
         style={{
           background: `linear-gradient(40deg, #${color1} -200%, #${color2} 150%)`,
-          // border: `1px solid #${color2} 150%`,
-          // boxShadow: `#${color2}  0px 0px 8px`
+          // border: `1px solid #${color2}`,
         }}
       >
         <div

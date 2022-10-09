@@ -1,0 +1,19 @@
+{
+    "short_name": "YourQuotes",
+    "name": "YourQuotes",
+    "icons": [
+      {
+        "src": "favicon.ico",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "theme_color": "#fd5202",
+    "background_color": "#ffffff",
+    "description": "YourQuotes is a user friendly and an eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image..",
+    "dir": "ltr",
+    "lang": "en-EN",
+    "orientation": "any"
+  }

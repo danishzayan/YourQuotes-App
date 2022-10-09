@@ -11,8 +11,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import ViewQuote from "./components/ViewQuote";
-
 // We can use inline-style
+import ScrollToTop from "./components/ScrollToTop";
+
 
 //API Details
 // 20220912223415
@@ -20,6 +21,9 @@ import ViewQuote from "./components/ViewQuote";
 
 const ID = nanoid();
 function App() {
+
+  
+
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
 
@@ -42,7 +46,17 @@ function App() {
 
   const [loading, setLoading] = useState(true);
 
-  
+ 
+  /*Checks the localstorage to see if the dark mode was enabled during last visit*/
+  useEffect(() => {
+    if(!localStorage.getItem("darkmode")){
+      return
+    }
+    let darkmode = JSON.parse(localStorage.getItem("darkmode"));
+    if(darkmode.isDark == true){
+      setDarkMode(true);
+    }
+  }, []);
 
   // read operaton
   const getData = async () => {
@@ -126,20 +140,16 @@ function App() {
         onClick={checkIfClickedInside}
       >
         <BrowserRouter>
-          <Header
-            handleToggleDarkMode={setDarkMode}
-            setSearch={setSearchText}
-            getData={getData}
-          />
-          {loading ? (
-            <div
-              style={{
-                display: "flex",
-                height: "80vh",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+        <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} />
+        {loading ? (
+          <div
+            style={{
+              display: "flex",
+              height: "80vh",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
               <Player
                 autoplay
                 loop
@@ -186,28 +196,28 @@ function App() {
                   pauseOnHover
                 />
                 <ToastContainer />
-                <button
-                  className="add-note-btn"
-                  onClick={() => {
-                    setAddNotePopupIsOpen(true);
-                  }}
-                  data-target="add-quote"
-                >
-                  <i
-                    className="fa-solid fa-plus"
-                    data-target="add-quote"
-                    title="add note"
-                  ></i>
-                </button>
-              </div>
-          )}
-          {addNotePopupIsOpen && (
-            <AddNotePopup
-              handleAddNote={addNote}
-              setAddNotePopupIsOpen={setAddNotePopupIsOpen}
-            />
-          )}
-        </BrowserRouter>
+               <button
+              className="add-note-btn"
+              style={{marginRight:"60px",marginBottom:"-2px"}}
+              onClick={() => {
+                setAddNotePopupIsOpen(true);
+              }}
+              data-target="add-quote"
+            >
+              <i class="fa-solid fa-plus" data-target="add-quote" title="add note"></i>
+            </button>
+            <div style={{margin:"0px"}} className="add-note-btn"><ScrollToTop /></div>
+
+          </div>
+        )}
+        {addNotePopupIsOpen && (
+          <AddNotePopup
+            handleAddNote={addNote}
+            setAddNotePopupIsOpen={setAddNotePopupIsOpen}
+          />
+        )}
+        
+      </BrowserRouter>
       </div>
     </>
   );
