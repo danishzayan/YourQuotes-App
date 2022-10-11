@@ -1,6 +1,6 @@
 # YourQuotes-App 📱
 
-YourQuotes is a user friendly and eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image. it is made with **Vite+React**.
+YourQuotes is an user friendly and eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image. it is made with **Vite+React**.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5dc02221-5e8b-406d-a59b-72c0a563baa6/deploy-status)](https://app.netlify.com/sites/your-quotess/deploys)
 <a href="https://github.com/danishzayan/YourQuotes-App"><img src="https://visitor-badge.laobi.icu/badge?page_id=danishzayan/YourQuotes-App" alt="Number of Visitors"></a>
@@ -66,8 +66,8 @@ YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) fi
 <h2>Project Contributors ⭐</h2>
 
 [![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)
-
-Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking <br /> <br />
+<br />
+<p align="center">Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking </p> <br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" />
