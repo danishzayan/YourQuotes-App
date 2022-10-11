@@ -63,11 +63,14 @@ YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) fi
 <td align="center"><a href="https://github.com/danishzayan"><img src="https://avatars.githubusercontent.com/u/46997504?v=4" width="100px;" alt=""/><br /><sub><b>Danish Kamal</b></sub></a></td>
   </tr>
 </table>
-<h2>Project Contributors ⭐</h2>
+
+## Contributor Over Time ⏳
 
 [![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)
 <br />
-<p align="center">Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking </p> <br />
+
+## Project Contributors 🌟
+Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🎉 </p><br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danishzayan/YourQuotes-App" />
