@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Search from "./Search";
+
 
 const Header = ({ handleToggleDarkMode, setSearch }) => {
 
@@ -21,9 +23,7 @@ const Header = ({ handleToggleDarkMode, setSearch }) => {
     <div className="header">
       <div className="header-top">
         <div className="header-left">
-          <h1>YourQuotes</h1>
-        </div>
-        <div className="header-right">
+          <Link to="/" className="header-link"><h1 onClick={()=>{getData()}}>YourQuotes</h1></Link>
           <Search handleSearchNote={setSearch} className="sm-hide" />
           <label className="switch">
 
