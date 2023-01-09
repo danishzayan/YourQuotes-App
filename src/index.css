@@ -292,7 +292,7 @@ textarea:focus {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(139deg, #000000, #000000, #01000a, #000000);
+  background-image: linear-gradient(139deg, #000a1f, #000000, #060025, #0b0d1f);
   margin-bottom: 1em;
   padding: 9px 15px;
   box-shadow: rgba(202, 197, 197, 0.24) 0px 0px 8px;
@@ -435,8 +435,21 @@ input:checked+.slider:before {
     gap: 0.5rem;
     padding-top: 0;
   }
+  .header-dark{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0;
+  }
 
   .header>.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .header-dark>.header-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
