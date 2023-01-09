@@ -1,24 +1,38 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Search from "./Search";
 
-const Header = ({ handleToggleDarkMode, setSearch }) => {
+const Header = ({ handleToggleDarkMode, setSearch, darkMode}) => {
+  let darkmode = JSON.parse(localStorage.getItem("darkmode"));
 
+  const [dark,setDark] = useState(false);
+
+useEffect(()=>{
+
+  if(darkMode){
+    setDark(true)
+  }else{
+    setDark(false);
+  }
+},[darkmode])
+console.log(dark)
   function checkIfDark() {
-    let darkmode = JSON.parse(localStorage.getItem("darkmode"));
 
     if (!darkmode) {
+
       return false
     }
 
     if (darkmode.isDark) {
+  
       return true
     }
-
+ 
     return false
   }
 
   return (
-    <div className="header">
+ 
+    <div className={dark ? "header-dark" : "header"}>
       <div className="header-top">
         <div className="header-left">
           <h1>YourQuotes</h1>
