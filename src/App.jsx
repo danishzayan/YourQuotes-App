@@ -29,7 +29,7 @@ function App() {
       id: ID,
       color1: randomColor1,
       color2: randomColor2,
-      text: "this is the note pad app text",
+      text: "It's YourQuotes-App",
       writer:`Writer's name`,
       date: "15/06/2021",
     },
