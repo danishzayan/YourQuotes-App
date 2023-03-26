@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as htmlToImage from 'html-to-image';
 
 const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
-  
+
   // code for listen text speech
   const msg = new SpeechSynthesisUtterance();
   msg.text = text;
@@ -34,7 +34,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
     if (navigator.share) {
       navigator
         .share({
-          text: `${text} <br />`,
+          text: `${text}`,
           url: 'https://your-quotess.netlify.app/',
         })
         .then(() => {
@@ -48,7 +48,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
     }
   };
 
-  
+
   // code for convert html to image
   const domEl = useRef(null);
   const downloadImage = async () => {
@@ -89,7 +89,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
               <i
                 className="fa-solid fa-trash"
                 onClick={() => handleDeleteNote(id)}
-              title="delete" ></i>
+                title="delete" ></i>
             </div>
           </div>
         </div>

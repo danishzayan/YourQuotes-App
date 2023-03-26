@@ -145,16 +145,17 @@ textarea:focus {
 }
 
 .footer .save {
+  color: #fff;
   border: none;
-  padding: 0 8px;
+  padding: 0 15px;
   border-radius: 10px;
-  background-color: #e1e1e1;
+  background-color: #000000;
   outline: none;
 }
 
 .footer .save:hover {
   cursor: pointer;
-  background-color: #ded4d4e8;
+  background-color: #141414e8;
 }
 
 .footer-writer span {
@@ -435,7 +436,8 @@ input:checked+.slider:before {
     gap: 0.5rem;
     padding-top: 0;
   }
-  .header-dark{
+
+  .header-dark {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -449,6 +451,7 @@ input:checked+.slider:before {
     align-items: center;
     width: 100%;
   }
+
   .header-dark>.header-top {
     display: flex;
     flex-direction: row;

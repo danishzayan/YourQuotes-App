@@ -19,8 +19,6 @@ import ScrollToTop from "./components/ScrollToTop";
 const ID = nanoid();
 function App() {
 
-  
-
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
 
@@ -82,7 +80,7 @@ function App() {
     };
     const newNotes = [...notes, newNote];
     setNotes(newNotes);
-    console.log(newNotes);
+    // console.log(newNotes);
 
     //create operation
     axios.post(

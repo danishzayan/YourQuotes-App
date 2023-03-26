@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 const AddNotePopup = ({ handleAddNote, setAddNotePopupIsOpen }) => {
+
   const [noteText, setNoteText] = useState("");
-  const [noteWriter,setNoteWriter] = useState("");
+  const [noteWriter, setNoteWriter] = useState("");
 
   const characterLimit = 200;
 
@@ -16,10 +17,11 @@ const AddNotePopup = ({ handleAddNote, setAddNotePopupIsOpen }) => {
   const handleSave = (e) => {
     e.preventDefault();
     if (noteText.trim().length > 0) {
-      handleAddNote(noteText,noteWriter);
+      handleAddNote(noteText, noteWriter);
       setNoteText("");
       setAddNotePopupIsOpen(false);
-    } else {
+    }
+    else {
       toast.error('Couldn\'t add an empty..', {
         position: "top-center",
         autoClose: 2000,
@@ -46,7 +48,7 @@ const AddNotePopup = ({ handleAddNote, setAddNotePopupIsOpen }) => {
           value={noteText}
           data-target="popup"
         ></textarea>
-        <input type="text" placeholder="Writer Name..." data-target="popup" value={noteWriter} onChange={(e)=>{setNoteWriter(e.target.value)}}/>
+        <input type="text" placeholder="Writer Name..." data-target="popup" value={noteWriter} onChange={(e) => { setNoteWriter(e.target.value) }} />
         <div className="footer" data-target="popup">
           <small data-target="popup">
             {characterLimit - noteText.length} Remaining
