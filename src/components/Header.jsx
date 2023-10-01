@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
 import Search from "./Search";
-
 const Header = ({ handleToggleDarkMode, setSearch, darkMode}) => {
   let darkmode = JSON.parse(localStorage.getItem("darkmode"));
 
@@ -37,6 +36,7 @@ console.log(dark)
         <div className="header-left">
           <h1>YourQuotes</h1>
         </div>
+
         <div className="header-right">
           <Search handleSearchNote={setSearch} className="sm-hide" />
           <label className="switch">

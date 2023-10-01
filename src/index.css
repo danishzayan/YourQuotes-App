@@ -492,3 +492,38 @@ input:checked+.slider:before {
   -webkit-box-shadow: initial 0 0 6px #8e8e8e;
   border-radius: 1px;
 }
+
+/* icons css */
+.icons{
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.icons-header{
+  position: fixed;
+  bottom: 20px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+.icons-header div{
+  margin: 0px 10px;
+  padding: 5px 0px;
+}
+.icons-header div:hover{
+  color:red;
+}
+.plus-sign{
+  color: crimson;
+}
+@media only screen and (max-width: 520px) {
+  .icons-header{
+    bottom: 60px;
+  }
+}
