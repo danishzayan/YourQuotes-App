@@ -11,6 +11,11 @@ import Header from "./components/Header";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollToTop from "./components/ScrollToTop";
+import {BiSolidHome} from 'react-icons/bi';
+import {TbCategoryFilled} from 'react-icons/tb';
+import {BsFillPatchPlusFill,BsFillSuitHeartFill} from 'react-icons/bs';
+import {IoIosSettings} from 'react-icons/io';
+
 
 //API Details
 // 20220912223415
@@ -124,6 +129,18 @@ function App() {
         className={`${darkMode ? "dark-mode body-dark  " : "body"}`}
         onClick={checkIfClickedInside}
       >
+        <div className="icons">
+          {/* icons */}
+        <div className="icons-header">
+            <div>
+                <BiSolidHome/>
+            </div>
+                <div><TbCategoryFilled/></div>
+                <div className="plus-sign"><BsFillPatchPlusFill/></div>
+                <div><BsFillSuitHeartFill/></div>
+                <div><IoIosSettings/></div>
+        </div>
+        </div>
         <Header handleToggleDarkMode={setDarkMode} setSearch={setSearchText} darkMode={darkMode} />
         {loading ? (
           <div
