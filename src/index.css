@@ -62,9 +62,9 @@ html {
 .cards-list {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, 17.5rem);
   padding-bottom: 1rem;
-  margin: 0 auto;
+  justify-content: center;
 }
 
 .card {
