@@ -46,9 +46,13 @@ function App() {
 
   /*Checks the localstorage to see if the dark mode was enabled during last visit*/
   useEffect(() => {
-    if(!localStorage.getItem('deletedITemsList')){
+    if(!localStorage.getItem('deletedItemsList')){
       let a = [];
-      localStorage.setItem('deletedITemsList',JSON.stringify(a));
+      localStorage.setItem('deletedItemsList',JSON.stringify(a));
+    }
+    if(!localStorage.getItem('addedItemsList')){
+      let a = [];
+      localStorage.setItem('addedItemsList',JSON.stringify(a));
     }
     if(!localStorage.getItem("darkmode")){
       return
@@ -62,9 +66,15 @@ function App() {
   // read operaton
   const getData = () => {
     setLoading(true);
-    let dellist = localStorage.getItem('deletedITemsList');
+    // getting deleted items data
+    let dellist = localStorage.getItem('deletedItemsList');
     dellist = JSON.parse(dellist);
     setDeletedItems(dellist);
+    // getting added items data
+    let addlist = localStorage.getItem("addedItemsList");
+    console.log(addlist);
+    addlist = JSON.parse(addlist);
+    setAddedItems(addlist);
     axios
       .get("https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app")
       .then((res) => {
@@ -92,7 +102,10 @@ function App() {
       "https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app",
       newNote
     ).then(res => {return res.data.id});
-    setAddedItems(...addedItems,newNote.id);
+    let newAddedlist = addedItems;
+    newAddedlist.push(newNote.id);
+    setAddedItems(newAddedlist);
+    localStorage.setItem('addedItemsList',JSON.stringify(newAddedlist));
     const newNotes = [...notes, newNote];
     setNotes(newNotes);
   };
@@ -105,7 +118,7 @@ function App() {
       delist.push(id);
       setDeletedItems(delist);
       delist = JSON.stringify(delist);
-      localStorage.setItem('deletedITemsList',delist);
+      localStorage.setItem('deletedItemsList',delist);
       setNotes(newNotes);
     }
     else
