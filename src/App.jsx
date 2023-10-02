@@ -41,8 +41,15 @@ function App() {
 
   const [loading, setLoading] = useState(true);
 
+  const [deletedItems,setDeletedItems] = useState([]);
+  const [addedItems,setAddedItems] = useState([]);
+
   /*Checks the localstorage to see if the dark mode was enabled during last visit*/
   useEffect(() => {
+    if(!localStorage.getItem('deletedITemsList')){
+      let a = [];
+      localStorage.setItem('deletedITemsList',JSON.stringify(a));
+    }
     if(!localStorage.getItem("darkmode")){
       return
     }
@@ -55,12 +62,14 @@ function App() {
   // read operaton
   const getData = () => {
     setLoading(true);
+    let dellist = localStorage.getItem('deletedITemsList');
+    dellist = JSON.parse(dellist);
+    setDeletedItems(dellist);
     axios
       .get("https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app")
       .then((res) => {
         setLoading(false);
-        console.log(res.data);
-        setNotes(res.data);
+        setNotes(res.data.filter(it=>!dellist.includes(it.id)));
       });
   };
 
@@ -68,9 +77,9 @@ function App() {
     getData();
   }, []);
 
-  const addNote = (text,writer) => {
+  const addNote = async (text,writer) => {
     const date = new Date();
-    const newNote = {
+    let newNote = {
       id: ID,
       color1: randomColor1,
       color2: randomColor2,
@@ -78,24 +87,26 @@ function App() {
       writer:writer,
       date: date.toLocaleDateString(),
     };
-    const newNotes = [...notes, newNote];
-    setNotes(newNotes);
-    // console.log(newNotes);
-
     //create operation
-    axios.post(
+    newNote.id = await axios.post(
       "https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app",
       newNote
-    );
+    ).then(res => {return res.data.id});
+    setAddedItems(...addedItems,newNote.id);
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
   };
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     //delete operation
-    if (id == ID){
-      axios.delete(
-        `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`);
-        setNotes(newNotes);
+    if (addedItems.includes(id)){
+      let delist = deletedItems;
+      delist.push(id);
+      setDeletedItems(delist);
+      delist = JSON.stringify(delist);
+      localStorage.setItem('deletedITemsList',delist);
+      setNotes(newNotes);
     }
     else
       toast("📋 This is not YourQutoes", {
