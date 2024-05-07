@@ -34,11 +34,8 @@ function App() {
   ]);
 
   const [searchText, setSearchText] = useState("");
-
   const [darkMode, setDarkMode] = useState(false);
-
   const [addNotePopupIsOpen, setAddNotePopupIsOpen] = useState(false);
-
   const [loading, setLoading] = useState(true);
 
   /*Checks the localstorage to see if the dark mode was enabled during last visit*/
@@ -68,7 +65,7 @@ function App() {
     getData();
   }, []);
 
-  const addNote = (text,writer) => {
+  const addNote = (text, writer) => {
     const date = new Date();
     const newNote = {
       id: ID,
@@ -111,8 +108,7 @@ function App() {
 
   const checkIfClickedInside = (e) => {
     if (
-      e.target.dataset.target != "popup" &&
-      e.target.dataset.target != "add-quote"
+      e.target.dataset.target != "popup" && e.target.dataset.target != "add-quote"
     ) {
       setAddNotePopupIsOpen(false);
     }
