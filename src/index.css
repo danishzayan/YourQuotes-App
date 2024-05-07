@@ -23,7 +23,7 @@ html {
   background-color: rgb(248, 248, 248);
   /* background-image: url("../src/assets/images/background.jpg"); */
   /* background:linear-gradient(rgba(6, 6, 6, 0.243), rgba(255, 255, 0, 0)), url("../src/assets/images/background.jpg"); */
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top, #cf4af3, #e73bd7, #f631bc, #fd31a2, #ff3a8b, #ff4b78, #ff5e68, #ff705c, #ff8c51, #ffaa49, #ffc848, #ffe652);
+  /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top, #cf4af3, #e73bd7, #f631bc, #fd31a2, #ff3a8b, #ff4b78, #ff5e68, #ff705c, #ff8c51, #ffaa49, #ffc848, #ffe652); */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
   background-position: center;
@@ -32,11 +32,8 @@ html {
 }
 
 .body-dark {
-  background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000);
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-color: #120f0f;
+  /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #000000); */
   background-position: center;
   background-attachment: fixed;
 }
@@ -45,7 +42,7 @@ html {
   /* max-width: 960px; */
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 25px 20px;
   min-height: 100vh;
 }
 
