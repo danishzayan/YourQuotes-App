@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Search from "./Search";
 
-const BottomHeader = ({ handleToggleDarkMode, setSearch, darkMode }) => {
+const BottomHeader = ({ handleToggleDarkMode, darkMode }) => {
   let darkmode = JSON.parse(localStorage.getItem("darkmode"));
-
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -63,28 +61,22 @@ const BottomHeader = ({ handleToggleDarkMode, setSearch, darkMode }) => {
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <svg
-            class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            class="w-6 h-6  text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
+            fill="currentColor"
+            viewBox="0 0 14 20"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-            />
+            <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z"></path>
           </svg>
-          <span class="sr-only">Search</span>
+          <span class="sr-only">Notification</span>
         </button>
         <div
           id="tooltip-wallet"
           role="tooltip"
           class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
         >
-          Wallet
+          Notification
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <div class="flex items-center justify-center">
@@ -124,9 +116,15 @@ const BottomHeader = ({ handleToggleDarkMode, setSearch, darkMode }) => {
           type="button"
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
-          <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
-                <path d="M13 20a1 1 0 0 1-.64-.231L7 15.3l-5.36 4.469A1 1 0 0 1 0 19V2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1 1Z"/>
-            </svg>
+          <svg
+            class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 14 20"
+          >
+            <path d="M13 20a1 1 0 0 1-.64-.231L7 15.3l-5.36 4.469A1 1 0 0 1 0 19V2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1 1Z" />
+          </svg>
           <span className="sr-only">Bookmarks</span>
         </button>
         <div
