@@ -27,23 +27,72 @@ npm install
 npm run dev
 ```
 
-## It has the following features:
+# 📜 Quotes Application UI Features
 
-- Gradient Theme.
-- Beautiful Cards for Quotes.
-- Card has footer in which footer have date, download icon, share icon, clipboard icon and delete icon.
+This application allows users to post, search, listen to, share, copy, download, and manage quotes with ease. Below is a detailed list of features to help contributors understand the current functionality and areas that need further development.
 
-## Add Features or Issue in YourQuotes-App:
+## ✅ Completed Features
 
-- **Note:** When your adding new features or issues fixing so UI/Theme design should be responsive for Mobile and Tablet.
-- Fix Issue: **Attention** Every body can post YourQutoes but should not be delete qutoes from everybody.. whenever other people try to delete your qutoes show tostify msg "This is not YourQutoes" or from Which system post Qutoes from only that system can delete qutoes not any other system and this funtionality should work on without login...
-- Fix issue: Share gradi
-  ent card image with social meaida without card footer icon and even should share app link with image.
-- Add a beautiful Loader with name YourQuotes when YourQuotes app will be open so it will be loading. **( done ✅ )**
-- Add a small loader in the bottom when data is fetching from api then it will load after that YourQuotes will be show
-- Fix Issue: Remove "type to add your-quotes" post card after that Add plus icon on the bottom-right-corner and when user click on plus icon a popup should be open for posting qutoes.. **( done ✅ )**
-- Add a sound button to Listen Quotes in a card **( done ✅ )**
-- Fix Issue: Quotes should be search in both Capital and small letter **( done ✅ )**
+- **Quotes Posting** ➕
+  - Users can post new quotes by clicking on the plus icon (`+`) at the bottom right corner.
+- **Search Functionality** 🔍
+  - A search bar at the top allows users to search for quotes.
+- **Listening to Quotes** 🔊
+  - Users can listen to quotes using the text-to-speech feature.
+- **Sharing Quotes** 📤
+  - Users can share quotes via a share button.
+- **Copying Quotes** 📋
+  - Users can copy quotes to the clipboard.
+- **Downloading Quotes** 📥
+  - Users can download quotes.
+- **Dark Mode** 🌙
+  - Users can toggle between dark mode and light mode.
+
+## 🚧 Pending Features
+
+- **Pages** 📄
+  - Home
+  - Notification
+  - Add
+  - Bookmark
+  - Profile
+- **Edit Quotes** ✏️
+  - Implement functionality for users to edit existing quotes.
+- **User Authentication** 🔐
+  - Add user login and registration features to personalize the experience.
+- **Commenting on Quotes** 💬
+  - Allow users to add comments on individual quotes.
+- **Like Button** 👍
+  - Implement a feature to allow users to like quotes.
+- **Favorites/Bookmarks** 📑
+  - Allow users to mark quotes as favorites or bookmark them for later reference.
+- **Profile Management** 👤
+  - Add user profile management to track posted quotes and activities.
+- **Quote Categories/Tags** 🏷️
+  - Enable categorizing or tagging quotes for better organization and searchability.
+- **Quote Translations** 🌐
+  - Provide a feature to translate quotes into different languages.
+- **Notification System** 🔔
+  - Implement notifications for user activities and updates.
+- **Social Sharing** 🌐
+  - Allow users to share quotes on social media platforms.
+- **Quote of the Day** 🌅
+  - Feature a "Quote of the Day" on the homepage.
+<!-- - **Advanced Search Filters** 🔍
+  - Add advanced search filters to refine search results. -->
+- **Analytics Dashboard** 📊
+  - Provide an analytics dashboard for users to see their quote interactions in profile.
+- **User Follow System** ➕👤
+  - Allow users to follow other users and see their activity.
+- **Multimedia Quotes** 🎨
+  - Enable users to add images or videos to quotes.
+- **Quote Collections** 📚
+  - Allow users to create and share collections of quotes.
+- **Offline Mode** 📴
+  - Provide an offline mode to access quotes without an internet connection.
+- **Localization** 🌍
+  - Support multiple languages for the application interface.
+
 
 ## Contributing 👨‍💻
 
