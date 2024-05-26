@@ -15,7 +15,7 @@ YourQuotes is an user friendly and eye catching App. User can post your qutoes w
 
 ## Screenshot of App 📷
 
-![YourQuotes-Appss](https://user-images.githubusercontent.com/46997504/193505249-6289857c-968e-4093-9b0b-60312a2e2faa.PNG)
+![alt text](image.png)
 
 ## Run YourQuotes-App
 
