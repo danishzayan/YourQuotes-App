@@ -1,6 +1,6 @@
 # YourQuotes-App 📱
 
-YourQuotes is an user friendly and eye catching App. User can post your qutoes without login and that user can delete YourQuotes not from other user. User can share quotes with friend, copy to clipboard and do download gradient quotes image. it is made with **Vite+React**.
+"YourQuotes" is a visually stunning and user-friendly application built with Vite+React. It offers a seamless experience for users to post their favorite quotes, ensuring a streamlined process. Users can effortlessly share quotes with friends, copy them to the clipboard, or download them as gradient images. The app also includes essential features such as a Home feed, Notifications, Bookmarks, and Profile management. Additionally, users can interact with quotes using Like buttons and have the option to edit their own submissions. Exciting features like "Quotes of the Day" provide daily inspiration, while translation capabilities enhance accessibility for a global audience. With its intuitive interface and a myriad of features, YourQuotes is the ultimate destination for quote enthusiasts to engage, express, and inspire. Join us in the journey of sharing wisdom and inspiration with YourQuotes.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5dc02221-5e8b-406d-a59b-72c0a563baa6/deploy-status)](https://app.netlify.com/sites/your-quotess/deploys)
 <a href="https://github.com/danishzayan/YourQuotes-App"><img src="https://visitor-badge.laobi.icu/badge?page_id=danishzayan/YourQuotes-App" alt="Number of Visitors"></a>
