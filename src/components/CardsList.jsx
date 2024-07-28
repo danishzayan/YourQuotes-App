@@ -9,6 +9,7 @@ const CardsList = ({ notes, handleAddNote, handleDeleteNote, searchText }) => {
       <div className="cards-list">
         {[...notes].reverse().map((note) => (
           <Card
+            key={note.id}
             id={note.id}
             color1={note.color1}
             color2={note.color2}

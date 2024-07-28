@@ -57,7 +57,7 @@ function App() {
       .get("https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app")
       .then((res) => {
         setLoading(false);
-        console.log(res.data);
+        // console.log(res.data);
         setNotes(res.data);
       });
   };
@@ -89,6 +89,8 @@ function App() {
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
+    console.log(newNotes);
+    console.log(id);
     //delete operation
     if (id == ID) {
       axios.delete(
@@ -178,7 +180,7 @@ function App() {
               data-target="add-quote"
             >
               <i
-                class="fa-solid fa-plus"
+                className="fa-solid fa-plus"
                 data-target="add-quote"
                 title="add note"
               ></i>
