@@ -38,7 +38,7 @@ const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
 
   return (
     <nav
-      className={`bg-white border-b border-gray-200 ${dark ? "dark:border-gray-600" : ""}`}
+      className={`bg-white border-b border-gray-200 ${dark ? "dark:border-gray-600 bg-black" : ""}`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">

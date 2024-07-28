@@ -131,7 +131,7 @@ function App() {
           <div
             style={{
               display: "flex",
-              height: "80vh",
+              height: "100vh",
               justifyContent: "center",
               alignItems: "center",
             }}
