@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Search from "../components/Search";
+import LoginButton from "./LoginButton";
+import { Tooltip } from "@mui/material";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
-  let darkmode = JSON.parse(localStorage.getItem("darkmode"));
-
   const [dark, setDark] = useState(false);
-
+  const [user, setUser] = useState(null);
+  const isLoggedIn = user ? true : false;
   useEffect(() => {
     if (darkMode) {
       setDark(true);
@@ -14,16 +17,41 @@ const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
     }
   }, [darkMode]);
 
-
-  function checkIfDark() {
-    if (!darkmode) {
-      return false;
-    }
-    if (darkmode.isDark) {
-      return true;
-    }
-    return false;
+  useEffect(()=>{
+    if(user){
+      toast(`Welcome ${user.name}`, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
+  },[isLoggedIn]);
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      const access_token = localStorage.getItem("token");
+      async function getUser() {
+        try{
+          const res = await axios.get(
+            "https://www.googleapis.com/oauth2/v3/userinfo",
+            {
+              headers: {
+                Authorization: `Bearer ${access_token}`,
+              },
+            }
+          );
+          setUser(res.data);
+        }catch(err){
+          console.log(err);
+        }
+
+      }
+      getUser();
+  }
+  }, []);
 
   const toggleDarkMode = () => {
     handleToggleDarkMode((previousDarkMode) => {
@@ -37,8 +65,11 @@ const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
 
   return (
     <nav
-      className={`border-b ${dark ? "dark:border-gray-600 bg-black" : "bg-white border-gray-200"}`}
+      className={`border-b ${
+        dark ? "dark:border-gray-600 bg-black" : "bg-white border-gray-200"
+      }`}
     >
+      <ToastContainer />
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
@@ -111,6 +142,20 @@ const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
           <div className="relative">
             <Search handleSearchNote={setSearch} />
           </div>
+          <div className="relative">
+            <LoginButton setUser={setUser} isLoggedIn={isLoggedIn} />
+          </div>
+          {isLoggedIn && (
+            <div className="relative">
+              <Tooltip title={user.name}>
+                <img
+                  src={user.picture}
+                  alt="user picture"
+                  className="rounded-full w-10"
+                />
+              </Tooltip>
+            </div>
+          )}
         </div>
       </div>
     </nav>
@@ -118,82 +163,3 @@ const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
 };
 
 export default Header;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from "react";
-// import Search from "./Search";
-
-// const Header = ({ handleToggleDarkMode, setSearch, darkMode }) => {
-//   let darkmode = JSON.parse(localStorage.getItem("darkmode"));
-
-//   const [dark, setDark] = useState(false);
-
-//   useEffect(() => {
-//     if (darkMode) {
-//       setDark(true);
-//     } else {
-//       setDark(false);
-//     }
-//   }, [darkmode]);
-
-//   console.log(dark);
-
-//   function checkIfDark() {
-//     if (!darkmode) {
-//       return false;
-//     }
-//     if (darkmode.isDark) {
-//       return true;
-//     }
-//     return false;
-//   }
-
-//   return (
-//     <div className={dark ? "header-dark" : "header"}>
-//       <div className="header-top flex justify-between items-center">
-//         <div className="header-left">
-//           <h1 className="text-2xl font-bold">YourQuotes</h1>
-//         </div>
-//         <div className="header-right flex items-center">
-//           <Search handleSearchNote={setSearch} className="sm-hide" />
-//           <label className="switch">
-//             <input
-//               type="checkbox"
-//               onClick={() => {
-//                 handleToggleDarkMode((previousDarkMode) => {
-//                   let darkmode = {
-//                     isDark: previousDarkMode === true ? false : true,
-//                   };
-//                   localStorage.setItem("darkmode", JSON.stringify(darkmode));
-//                   return !previousDarkMode;
-//                 });
-//               }}
-//               defaultChecked={checkIfDark()}
-//             />
-//             <span className="slider round"></span>
-//           </label>
-//         </div>
-//       </div>
-//       <Search className="sm-show" handleSearchNote={setSearch} />
-//     </div>
-//   );
-// };
-
-// export default Header;
