@@ -82,10 +82,10 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
               {date}
             </small>
             <div className="footer-icon">
-              <i class="fa-solid fa-download" onClick={downloadImage} title="download"></i>
-              <i class="fa-solid fa-volume-up" onClick={talk} title="volume"></i>
-              <i class="fa-solid fa-share" onClick={handleShareText} title="share"></i>
-              <i class="fa-sharp fa-solid fa-copy" onClick={handleCopyText} title="copy"></i>
+              <i className="fa-solid fa-download" onClick={downloadImage} title="download"></i>
+              <i className="fa-solid fa-volume-up" onClick={talk} title="volume"></i>
+              <i className="fa-solid fa-share" onClick={handleShareText} title="share"></i>
+              <i className="fa-sharp fa-solid fa-copy" onClick={handleCopyText} title="copy"></i>
               <i
                 className="fa-solid fa-trash"
                 onClick={() => handleDeleteNote(id)}
