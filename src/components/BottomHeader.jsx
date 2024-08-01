@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const BottomHeader = ({ handleToggleDarkMode, darkMode }) => {
+const BottomHeader = ({darkMode,handlePopupOpen }) => {
   let darkmode = JSON.parse(localStorage.getItem("darkmode"));
   const [dark, setDark] = useState(false);
+  // console.log("rendering bottom ");
 
   useEffect(() => {
     if (darkMode) {
@@ -11,17 +12,6 @@ const BottomHeader = ({ handleToggleDarkMode, darkMode }) => {
       setDark(false);
     }
   }, [darkmode]);
-
-
-  function checkIfDark() {
-    if (!darkmode) {
-      return false;
-    }
-    if (darkmode.isDark) {
-      return true;
-    }
-    return false;
-  }
 
   return (
     <div
@@ -81,8 +71,10 @@ const BottomHeader = ({ handleToggleDarkMode, darkMode }) => {
         <div className="flex items-center justify-center">
           <button
             data-tooltip-target="tooltip-new"
+            data-target="add-btn"
             type="button"
-            className="inline-flex items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+            className="addBtn inline-flex items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+            onClick={handlePopupOpen}
           >
             <svg
               className="w-4 h-4 text-white"
@@ -90,6 +82,7 @@ const BottomHeader = ({ handleToggleDarkMode, darkMode }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 18 18"
+              data-target="add-btn"
             >
               <path
                 stroke="currentColor"
@@ -97,9 +90,10 @@ const BottomHeader = ({ handleToggleDarkMode, darkMode }) => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M9 1v16M1 9h16"
+                data-target="add-btn"
               />
             </svg>
-            <span className="sr-only">New item</span>
+            <span className="sr-only" data-target="add-btn">New item</span>
           </button>
         </div>
         <div

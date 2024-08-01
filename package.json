@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@lottiefiles/react-lottie-player": "^3.4.7",
+    "@mui/material": "^5.16.6",
+    "@react-oauth/google": "^0.12.1",
     "axios": "^0.27.2",
+    "dotenv": "^16.4.5",
     "html-to-image": "^1.10.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
