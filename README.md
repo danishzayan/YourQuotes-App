@@ -78,7 +78,7 @@ This application allows users to post, search, listen to, share, copy, download,
   - Allow users to share quotes on social media platforms.
 - **Quote of the Day** 🌅
   - Feature a "Quote of the Day" on the homepage.
-<!-- - **Advanced Search Filters** 🔍
+  <!-- - **Advanced Search Filters** 🔍
   - Add advanced search filters to refine search results. -->
 - **Analytics Dashboard** 📊
   - Provide an analytics dashboard for users to see their quote interactions in profile.
@@ -93,10 +93,10 @@ This application allows users to post, search, listen to, share, copy, download,
 - **Localization** 🌍
   - Support multiple languages for the application interface.
 
-
 ## Contributing 👨‍💻
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 - Contributions make the open source community such an amazing place to learn, inspire, and create.
 - Any contributions you make are **greatly appreciated**.
 - Check out our [contribution guidelines](/CONTRIBUTING.md) for more information.
@@ -105,20 +105,13 @@ This application allows users to post, search, listen to, share, copy, download,
 
 YourQuotes-App is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Project Admin 😎
-
-<table>
-  <tr>
-<td align="center"><a href="https://github.com/danishzayan"><img src="https://avatars.githubusercontent.com/u/46997504?v=4" width="100px;" alt=""/><br /><sub><b>Danish Kamal</b></sub></a></td>
-  </tr>
-</table>
-
 ## Contributor Over Time ⏳
 
 [![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=danishzayan/YourQuotes-App)
 <br />
 
 ## Project Contributors 🌟
+
 Thanks a lot for spending your time helping YourQuotes grow. Thanks a lot! Keep rocking 🎉 </p><br />
 
 <a href="https://github.com/danishzayan/YourQuotes-App/graphs/contributors">
