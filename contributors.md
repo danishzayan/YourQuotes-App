@@ -30,7 +30,7 @@
         <a href="https://github.com/sourabh053">
             <img src="https://avatars.githubusercontent.com/u/121865285?v=4" width="100;" alt="sourabh053"/>
             <br />
-            <sub><b>sourabh053</b></sub>
+            <sub><b>Sourabh053</b></sub>
         </a>
     </td>
     <td align="center">
@@ -87,7 +87,7 @@
         <a href="https://github.com/prateek565">
             <img src="https://avatars.githubusercontent.com/u/78357778?v=4" width="100;" alt="prateek565"/>
             <br />
-            <sub><b>prateek565</b></sub>
+            <sub><b>Prateek565</b></sub>
         </a>
     </td></tr>
 <tr>
