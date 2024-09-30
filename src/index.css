@@ -493,3 +493,24 @@ input:checked+.slider:before {
   -webkit-box-shadow: initial 0 0 6px #8e8e8e;
   border-radius: 1px;
 }
+
+.liked {
+  color: red;
+  transition: color 0.3s ease;
+}
+
+.footer-icon i {
+  cursor: pointer;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.like-count {
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
