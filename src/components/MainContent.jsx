@@ -8,8 +8,7 @@ import AddNotePopup from "../components/AddNotePopup";
 import CardsList from "../components/CardsList";
 import { nanoid } from "nanoid";
 import axios from "axios";
-import { ToastContainer } from "react-toastify";
-// import Search from "./components/Search";
+import { ToastContainer } from "react-toastify"
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollToTop from "../components/ScrollToTop";
@@ -20,7 +19,9 @@ function MainContent({
   setAddNotePopupIsOpen,
   searchText,
   darkMode,
-  handlePopupOpen
+  handlePopupOpen,
+  editNotePopupIsOpen,
+  setEditNotePopupIsOpen,
 }) {
   const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
   const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
@@ -38,6 +39,7 @@ function MainContent({
   ]);
 
   const [loading, setLoading] = useState(true);
+  const [editingNoteId, setEditingNoteId] = useState(null);
 
   // read operaton
   const getData = () => {
@@ -78,8 +80,8 @@ function MainContent({
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
-    console.log(newNotes);
-    console.log(id);
+    // console.log(newNotes);
+    // console.log(id);
     //delete operation
     if (true) {
       axios.delete(
@@ -99,6 +101,41 @@ function MainContent({
   };
 
 
+  const handleEditNote = (id,editedText)=>{
+    const date = new Date()
+    const newNote = notes.find((note)=>note.id===id)
+    newNote.text = editedText
+    newNote.date = date.toLocaleDateString()
+
+    //Update the note in your API
+    axios
+    .put(
+      `https://6315b6ef33e540a6d38296a9.mockapi.io/notepad-app/${id}`,
+      newNote
+    )
+    .then(() => {
+        toast.success('Quote Edited', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+    })
+    .catch(() => {
+      toast.error('Unable to Edit Your Quote', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    });
+};
   return (
     <>
       {loading ? (
@@ -129,6 +166,12 @@ function MainContent({
             searchText={searchText}
             handleAddNote={addNote}
             handleDeleteNote={deleteNote}
+             setEditingNoteId={setEditingNoteId}
+            setEditNotePopupIsOpen = {setEditNotePopupIsOpen}
+            editNotePopupIsOpen={editNotePopupIsOpen}
+            editingNoteId ={editingNoteId}
+            handleEditNote={handleEditNote}
+
           />
           <ToastContainer
             position="top-center"

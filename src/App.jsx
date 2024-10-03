@@ -12,9 +12,9 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [darkMode, setDarkMode] = useState(false);
   const [addNotePopupIsOpen, setAddNotePopupIsOpen] = useState(false);
+  const [editNotePopupIsOpen, setEditNotePopupIsOpen] = useState(false);
   const handlePopupOpen = () => {
     setAddNotePopupIsOpen(true);
-    // console.log("here");
   };
   /*Checks the localstorage to see if the dark mode was enabled during last visit*/
   useEffect(() => {
@@ -35,7 +35,6 @@ function App() {
       setAddNotePopupIsOpen(false);
     }
   };
-  // console.log("rendering app");
   return (
     <>
       <div
@@ -53,6 +52,8 @@ function App() {
           setAddNotePopupIsOpen={setAddNotePopupIsOpen}
           darkMode={darkMode}
           handlePopupOpen={handlePopupOpen}
+          setEditNotePopupIsOpen={setEditNotePopupIsOpen}
+          editNotePopupIsOpen={editNotePopupIsOpen}
         />
       </div>
     </>
