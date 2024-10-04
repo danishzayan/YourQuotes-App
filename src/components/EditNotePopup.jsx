@@ -52,7 +52,7 @@ const EditNotePopup = ({
 
   return (
     < >
-        <ToastContainer />
+
       <div ref={editPopup} className="card new popup" data-target="popup">
         <h1 className="popup-title" data-target="popup">
           Edit Your Quote
