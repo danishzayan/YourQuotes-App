@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as htmlToImage from 'html-to-image';
 
-const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
+const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer  ,handleEditClick}) => {
 
   // code for listen text speech
   const msg = new SpeechSynthesisUtterance();
@@ -82,6 +82,7 @@ const Card = ({ id, color1, color2, text, date, handleDeleteNote, writer }) => {
               {date}
             </small>
             <div className="footer-icon">
+              <i className='fa-solid fa-pen-to-square mx-2 cursor-pointer' onClick={()=>handleEditClick(id)}></i>
               <i className="fa-solid fa-download" onClick={downloadImage} title="download"></i>
               <i className="fa-solid fa-volume-up" onClick={talk} title="volume"></i>
               <i className="fa-solid fa-share" onClick={handleShareText} title="share"></i>
