@@ -7,6 +7,7 @@ import "./App.css";
 import Header from "./components/Header";
 import "react-toastify/dist/ReactToastify.css";
 import MainContent from "./components/MainContent";
+import Footer from './components/Footer';
 
 function App() {
   const [searchText, setSearchText] = useState("");
@@ -54,6 +55,7 @@ function App() {
           darkMode={darkMode}
           handlePopupOpen={handlePopupOpen}
         />
+        <Footer />
       </div>
     </>
   );
